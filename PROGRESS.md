@@ -1,7 +1,7 @@
 # Health Pointe Jacksonville — Rebuild Progress
 
-## Status: Framework Complete ✅
-**Last updated:** 2026-05-19
+## Status: Homepage cleanup complete, deployed to Vercel ✅
+**Last updated:** 2026-05-21
 
 ---
 
@@ -101,7 +101,7 @@
 
 ---
 
-## Accessibility Checklist ✅
+## Accessibility Checklist
 - [x] Skip-to-content link on every page
 - [x] `header / nav / main / footer` semantic landmarks
 - [x] All images: `width`, `height`, `alt` on every `<Image>`
@@ -109,6 +109,34 @@
 - [x] All icon-only buttons have `aria-label`
 - [x] Form fields have associated `<label>` and `aria-describedby` for errors
 - [x] No accessibility overlay widgets
+- [x] `aria-live` region on testimonial carousel
+- [x] Treatment card hover text marked `aria-hidden`
+- [x] Testimonial dots: `role="group"` + `aria-pressed`
 - [ ] Full keyboard navigation audit (manual)
-- [ ] Screen reader test (NVDA / VoiceOver)
+- [ ] Screen reader test (VoiceOver)
 - [ ] Color contrast audit (axe DevTools)
+
+---
+
+## 🎯 Next Session Priority — ADA Score to 100
+
+**Current PageSpeed scores (hpjax.vercel.app — 2026-05-21):**
+| Category | Score |
+|---|---|
+| Performance | 92 |
+| Accessibility | 86 ← focus here |
+| Best Practices | 100 ✅ |
+| SEO | 92 |
+
+**Goal:** Accessibility 86 → 100. Work through every Lighthouse accessibility failure systematically.
+
+**Known issues to address:**
+- [ ] Run full Lighthouse accessibility report and capture all failing audits
+- [ ] Fix any color contrast failures (ink-muted, ink-subtle on white/surface backgrounds)
+- [ ] Audit `<ScrollReveal>` (renders `<div>`) inside `<ul>` — invalid HTML, screen readers affected
+- [ ] Verify `lang` attribute and page `<title>` on all routes
+- [ ] Audit focus order / tab sequence on mobile nav and dropdowns
+- [ ] Verify all interactive states are keyboard accessible
+- [ ] Check `aria-expanded` / `aria-controls` wiring on Header dropdowns
+- [ ] Audit form error announcement timing
+- [ ] TopBanner `role="banner"` conflicts with `<header>` landmark (both are banner role)

@@ -1,0 +1,9 @@
+Place logo files here:
+- logo.png       — horizontal color logo (used in Header on white bg)
+- logo-white.png — horizontal logo for dark backgrounds (Footer)
+
+Download from:
+https://hpjax.com/wp-content/uploads/2025/03/health-pointe-horizontal-logo.png
+
+Also place the OG image as:
+- og-default.png  (1200x630px)

@@ -129,7 +129,7 @@ export function servicePageSchema({
           { name, href: url },
         ]),
       },
-      { "@id": BUSINESS_ID, ...localBusinessEntity },
+      { ...localBusinessEntity },
     ],
   };
 }
@@ -245,7 +245,7 @@ export function teamPageSchema() {
           "Dr. Julee Miller is a board-certified Doctor of Acupuncture and Chinese Herbal Medicine (DAcCHM) and Florida Licensed Acupuncture Physician (AP). She holds the FABORM credential — making her one of Jacksonville, FL's top ABORM-certified holistic fertility specialists.",
         url: `${SITE_URL}/our-team/`,
       },
-      { "@id": BUSINESS_ID, ...localBusinessEntity },
+      { ...localBusinessEntity },
     ],
   };
 }

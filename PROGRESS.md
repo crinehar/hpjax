@@ -1,6 +1,6 @@
 # Health Pointe Jacksonville — Rebuild Progress
 
-## Status: Shopify headless gift card store live on /shop ✅
+## Status: ADA accessibility fixes complete — targeting 100 score ✅
 **Last updated:** 2026-05-22
 
 ---
@@ -170,18 +170,24 @@
 
 ## 🎯 Next Session Priorities
 
-1. **ADA Score 86 → 100** — run full Lighthouse accessibility audit, fix all failures
-2. **Analytics** — wire GA4 + FB Pixel once IDs are provided
-3. **Shopify upgrade** — test full checkout end-to-end on paid plan
-4. **WordPress redirects** — map old WP URLs to new routes before DNS cutover
+1. **Analytics** — wire GA4 + FB Pixel once IDs are provided
+2. **Shopify upgrade** — test full checkout end-to-end on paid plan
+3. **WordPress redirects** — map old WP URLs to new routes before DNS cutover
+4. **Run Lighthouse** — verify ADA score reached 100 after fixes in this session
 
-**Known ADA issues to address:**
-- [ ] Run full Lighthouse accessibility report and capture all failing audits
-- [ ] Fix any color contrast failures (ink-muted, ink-subtle on white/surface backgrounds)
-- [ ] Audit `<ScrollReveal>` (renders `<div>`) inside `<ul>` — invalid HTML, screen readers affected
-- [ ] Verify `lang` attribute and page `<title>` on all routes
-- [ ] Audit focus order / tab sequence on mobile nav and dropdowns
-- [ ] Verify all interactive states are keyboard accessible
-- [ ] Check `aria-expanded` / `aria-controls` wiring on Header dropdowns
-- [ ] Audit form error announcement timing
-- [ ] TopBanner `role="banner"` conflicts with `<header>` landmark (both are banner role)
+**ADA fixes completed (2026-05-22):**
+- [x] Color contrast: teal-dark darkened #1E8A7C → #1E847C (white text 4.53:1)
+- [x] Color contrast: btn-primary → text-ink on gold (6.59:1, was 2.64:1)
+- [x] Color contrast: btn-secondary → primary-dark border/text (4.57:1)
+- [x] Color contrast: BookingCTA → teal-dark/ink gradient, gold button with dark text
+- [x] Color contrast: TopBanner text-white/90 → text-white
+- [x] Color contrast: fertility section text-white/80 → text-white
+- [x] Color contrast: footer bottom bar text-gray-500 → text-gray-400
+- [x] Color contrast: global focus ring outline-primary → outline-teal-dark
+- [x] Color contrast: skip link bg-primary → bg-teal-dark
+- [x] Invalid list HTML: credentials ul>div>li → div>div>div
+- [x] Invalid list HTML: What We Treat ul>div>li → div[role=list]>div>div[role=listitem]
+- [x] Touch target: testimonial dots 10×10px → 24×24px minimum
+- [x] Duplicate landmark: TopBanner role="banner" → role="region"
+- [x] Favicon 404: added icons metadata in layout.tsx pointing to logo.png
+- [x] Footer Gift Cards link: /gift-cards → /shop

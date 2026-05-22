@@ -1,3 +1,4 @@
+import Link from "next/link";
 import HeroSection from "@/components/HeroSection";
 import BookingCTA from "@/components/BookingCTA";
 import ScrollReveal from "@/components/ScrollReveal";
@@ -6,12 +7,18 @@ interface Condition {
   label: string;
 }
 
+interface BreadcrumbItem {
+  label: string;
+  href: string;
+}
+
 interface ServicePageTemplateProps {
   title: string;
   tagline: string;
   description: string;
   conditions?: Condition[];
   whatToExpect?: string;
+  breadcrumbs?: BreadcrumbItem[];
 }
 
 export default function ServicePageTemplate({
@@ -20,7 +27,10 @@ export default function ServicePageTemplate({
   description,
   conditions = [],
   whatToExpect,
+  breadcrumbs,
 }: ServicePageTemplateProps) {
+  const crumbs: BreadcrumbItem[] = breadcrumbs ?? [{ label: "Home", href: "/" }];
+
   return (
     <>
       <HeroSection
@@ -31,6 +41,26 @@ export default function ServicePageTemplate({
         secondaryCtaLabel="View All Services"
         secondaryCtaHref="/#services-heading"
       />
+
+      {/* Breadcrumb bar */}
+      <nav aria-label="Breadcrumb" className="bg-surface-muted border-b border-gray-100">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+          <ol className="flex items-center flex-wrap gap-2 text-sm text-ink-muted">
+            {crumbs.map((crumb, i) => (
+              <li key={crumb.href} className="flex items-center gap-2">
+                {i > 0 && <span aria-hidden="true">/</span>}
+                <Link href={crumb.href} className="hover:text-primary transition-colors">
+                  {crumb.label}
+                </Link>
+              </li>
+            ))}
+            <li className="flex items-center gap-2">
+              <span aria-hidden="true">/</span>
+              <span className="text-ink font-medium" aria-current="page">{title}</span>
+            </li>
+          </ol>
+        </div>
+      </nav>
 
       <section aria-labelledby="service-description-heading" className="py-20 bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">

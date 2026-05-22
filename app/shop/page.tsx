@@ -37,11 +37,21 @@ export default async function ShopPage() {
   const giftCards = await getGiftCards().catch(() => []);
 
   const schema = shopPageSchema(
-    giftCards.map((c) => ({
-      title: c.title,
-      handle: c.handle,
-      price: c.variants[0]?.price.amount ?? "0",
-    }))
+    giftCards.map((c) => {
+      const lowestVariant = c.variants.reduce((min, v) =>
+        parseFloat(v.price.amount) < parseFloat(min.price.amount) ? v : min
+      );
+      return {
+        title: c.title,
+        handle: c.handle,
+        description: c.description || `${c.title} — redeemable for any service at Health Pointe Jacksonville.`,
+        price: lowestVariant.price.amount,
+        currencyCode: lowestVariant.price.currencyCode,
+        imageUrl: c.featuredImage?.url,
+        imageAlt: c.featuredImage?.altText ?? c.title,
+        availableForSale: c.variants.some((v) => v.availableForSale),
+      };
+    })
   );
 
   return (

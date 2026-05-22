@@ -234,9 +234,18 @@ export function breadcrumbSchema(items: { name: string; href: string }[]) {
   };
 }
 
-/** Shop archive — ItemList of gift card products */
+/** Shop archive — ItemList of gift card products (carousel-eligible) */
 export function shopPageSchema(
-  products: { title: string; handle: string; price: string }[]
+  products: {
+    title: string;
+    handle: string;
+    description: string;
+    price: string;
+    currencyCode: string;
+    imageUrl?: string;
+    imageAlt?: string;
+    availableForSale: boolean;
+  }[]
 ) {
   return {
     "@context": "https://schema.org",
@@ -246,8 +255,26 @@ export function shopPageSchema(
     itemListElement: products.map((p, i) => ({
       "@type": "ListItem",
       position: i + 1,
-      name: p.title,
-      url: `${SITE_URL}/shop/${p.handle}/`,
+      item: {
+        "@type": "Product",
+        "@id": `${SITE_URL}/shop/${p.handle}/#product`,
+        name: p.title,
+        description: p.description,
+        url: `${SITE_URL}/shop/${p.handle}/`,
+        ...(p.imageUrl && {
+          image: { "@type": "ImageObject", url: p.imageUrl, description: p.imageAlt ?? p.title },
+        }),
+        offers: {
+          "@type": "Offer",
+          price: parseFloat(p.price).toFixed(2),
+          priceCurrency: p.currencyCode,
+          availability: p.availableForSale
+            ? "https://schema.org/InStock"
+            : "https://schema.org/OutOfStock",
+          url: `${SITE_URL}/shop/${p.handle}/`,
+          seller: { "@id": BUSINESS_ID },
+        },
+      },
     })),
   };
 }

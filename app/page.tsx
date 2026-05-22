@@ -328,7 +328,7 @@ export default function HomePage() {
             <p className="text-gray-200 text-lg max-w-2xl mx-auto mb-8">
               Let us help you feel your best, naturally. Decrease chronic pain and strengthen your immune system with acupuncture so you get back to enjoying life&apos;s moments.
             </p>
-            <Link href="/about/" className="btn-primary text-base px-8 py-4">
+            <Link href="/about/" className="btn-primary text-base px-8 py-4" aria-label="Learn more about Health Pointe Jacksonville">
               Learn More
             </Link>
           </ScrollReveal>
@@ -357,7 +357,7 @@ export default function HomePage() {
                 <p className="text-ink-muted leading-relaxed mb-6">
                   Massage is no longer just a luxury. It&apos;s a way to a healthier, happier life. Looking for more relaxation and less pain? What if you could also alleviate headaches, ease anxiety, and improve immune function all at the same time?
                 </p>
-                <Link href="/services/massage-therapy-jacksonville/" className="btn-primary">
+                <Link href="/services/massage-therapy-jacksonville/" className="btn-primary" aria-label="Learn more about massage therapy at Health Pointe Jacksonville">
                   Learn More
                 </Link>
               </ScrollReveal>

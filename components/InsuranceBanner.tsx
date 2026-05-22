@@ -39,11 +39,11 @@ export default function InsuranceBanner() {
         >
           Verify Your Insurance
         </Link>
-        <p className="mt-4 text-sm text-ink-muted">
+        <p className="mt-4 text-sm text-ink">
           Not sure if your plan is covered?{" "}
           <a
             href="tel:9044480046"
-            className="text-teal-dark font-semibold hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-dark rounded-sm"
+            className="font-semibold underline underline-offset-2 hover:text-teal-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-dark rounded-sm"
           >
             Call (904) 448-0046
           </a>{" "}

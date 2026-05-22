@@ -1,7 +1,17 @@
 # Health Pointe Jacksonville — Rebuild Progress
 
-## Status: ADA accessibility fixes complete — targeting 100 score ✅
+## Status: Lighthouse 93 Perf / 100 ADA / 100 BP / 100 SEO ✅
 **Last updated:** 2026-05-22
+
+### Lighthouse Benchmark Scores (2026-05-22 — hpjax.vercel.app)
+| Category | Score |
+|---|---|
+| Performance | 93 |
+| Accessibility | 100 |
+| Best Practices | 100 |
+| SEO | 100 |
+
+These are the baseline scores to maintain before go-live. Do not merge PRs that regress any score.
 
 ---
 

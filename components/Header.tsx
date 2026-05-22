@@ -37,6 +37,7 @@ const aboutLinks: NavLink[] = [
   { label: "Meet Our Team", href: "/our-team/", desc: "Board-certified Jacksonville acupuncturists" },
   { label: "Testimonials", href: "/testimonials/", desc: "Patient stories from Jacksonville, FL" },
   { label: "About Us", href: "/about/", desc: "Our clinic, mission & approach to care" },
+  { label: "Shop Gift Cards", href: "/shop/", desc: "Give the gift of health — gift cards for any service" },
 ];
 
 type OpenMenu = "womens-health" | "acupuncture" | "other-services" | "about" | null;

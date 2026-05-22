@@ -66,7 +66,7 @@ export default function TopBanner() {
             {/* Utility icons */}
             <div className="flex items-center gap-3">
               <Link
-                href="/gift-cards"
+                href="/shop"
                 className="text-white/80 hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white rounded-sm"
                 aria-label="Gift cards"
               >

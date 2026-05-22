@@ -234,6 +234,79 @@ export function breadcrumbSchema(items: { name: string; href: string }[]) {
   };
 }
 
+/** Shop archive — ItemList of gift card products */
+export function shopPageSchema(
+  products: { title: string; handle: string; price: string }[]
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Gift Cards — Health Pointe Jacksonville",
+    url: `${SITE_URL}/shop/`,
+    itemListElement: products.map((p, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: p.title,
+      url: `${SITE_URL}/shop/${p.handle}/`,
+    })),
+  };
+}
+
+/** Product detail page — gift card */
+export function giftCardProductSchema({
+  title,
+  description,
+  handle,
+  imageUrl,
+  imageAlt,
+  variants,
+}: {
+  title: string;
+  description: string;
+  handle: string;
+  imageUrl?: string;
+  imageAlt?: string;
+  variants: { price: string; currencyCode: string; availableForSale: boolean }[];
+}) {
+  const lowestPrice = variants.reduce(
+    (min, v) => (parseFloat(v.price) < parseFloat(min.price) ? v : min),
+    variants[0]
+  );
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Product",
+        "@id": `${SITE_URL}/shop/${handle}/#product`,
+        name: title,
+        description,
+        url: `${SITE_URL}/shop/${handle}/`,
+        brand: { "@id": BUSINESS_ID },
+        ...(imageUrl
+          ? { image: { "@type": "ImageObject", url: imageUrl, description: imageAlt ?? title } }
+          : {}),
+        offers: variants.map((v) => ({
+          "@type": "Offer",
+          priceCurrency: v.currencyCode,
+          price: parseFloat(v.price).toFixed(2),
+          availability: v.availableForSale
+            ? "https://schema.org/InStock"
+            : "https://schema.org/OutOfStock",
+          seller: { "@id": BUSINESS_ID },
+          url: `${SITE_URL}/shop/${handle}/`,
+        })),
+        aggregateRating: undefined,
+      },
+      breadcrumbSchema([
+        { name: "Home", href: "/" },
+        { name: "Shop", href: "/shop/" },
+        { name: title, href: `/shop/${handle}/` },
+      ]),
+    ],
+  };
+}
+
 /** Team / practitioner page */
 export function teamPageSchema() {
   return {

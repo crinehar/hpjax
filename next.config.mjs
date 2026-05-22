@@ -4,6 +4,7 @@ const nextConfig = {
     remotePatterns: [
       { protocol: "https", hostname: "hpjax.com" },
       { protocol: "https", hostname: "img.youtube.com" },
+      { protocol: "https", hostname: "cdn.shopify.com" },
     ],
   },
 };

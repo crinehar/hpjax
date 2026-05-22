@@ -1,7 +1,7 @@
 # Health Pointe Jacksonville — Rebuild Progress
 
-## Status: Homepage cleanup complete, deployed to Vercel ✅
-**Last updated:** 2026-05-21
+## Status: Shopify headless gift card store live on /shop ✅
+**Last updated:** 2026-05-22
 
 ---
 
@@ -16,7 +16,9 @@
 | `/contact` | ✅ Scaffolded | React Hook Form wired; needs Resend server action |
 | `/accessibility` | ✅ Scaffolded | WCAG 2.1 AA statement |
 | `/book` | ✅ Scaffolded | AcuBliss iframe container — **needs src URL uncommented** |
-| `/gift-cards` | ✅ Scaffolded | Shopify stub — **needs Storefront API** |
+| `/gift-cards` | ✅ Removed | Replaced by /shop |
+| `/shop` | ✅ Live | Shopify headless product grid — fetches live gift cards |
+| `/shop/[handle]` | ✅ Live | Product detail — variant selector, qty, buy → new tab checkout |
 | `/blog` | ✅ Scaffolded | Static placeholder posts — **needs WordPress REST API** |
 | `/blog/[slug]` | ✅ Scaffolded | Dynamic route with static params from placeholder data |
 | `/womens-health` | ✅ Scaffolded | Service grid for women's health |
@@ -82,7 +84,7 @@
 |---|---|---|
 | **AcuBliss booking iframe** | `app/book/page.tsx` — uncomment the `<iframe>` | none (public URL) |
 | **WordPress blog** | `app/blog/page.tsx` + `app/blog/[slug]/page.tsx` | `WORDPRESS_API_URL` |
-| **Shopify gift cards** | `app/gift-cards/page.tsx` | `NEXT_PUBLIC_SHOPIFY_DOMAIN`, `NEXT_PUBLIC_SHOPIFY_STOREFRONT_TOKEN` |
+| **Shopify gift cards** | ✅ Connected — `app/shop/` live | domain + token in `.env.local` |
 | **Resend contact form** | Create `app/actions/contact.ts` server action | `RESEND_API_KEY` |
 | **Mailchimp newsletter** | `components/NewsletterForm.tsx` | `MAILCHIMP_API_KEY`, `MAILCHIMP_AUDIENCE_ID`, `MAILCHIMP_SERVER_PREFIX` |
 

@@ -63,16 +63,28 @@ export default async function ShopPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
 
-      <section aria-labelledby="shop-heading" className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <ScrollReveal>
-            <div className="text-center mb-4">
-              <h1 id="shop-heading" className="section-heading">Gift Cards</h1>
-            </div>
-          </ScrollReveal>
+      {/* Hero banner */}
+      <div className="relative h-64 sm:h-80 lg:h-96 w-full overflow-hidden">
+        <Image
+          src="/images/shop-wellness-products-health-pointe-jacksonville.avif"
+          alt="Woman stretching after wellness treatment at Health Pointe Jacksonville"
+          fill
+          sizes="100vw"
+          className="object-cover object-center"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/45" aria-hidden="true" />
+        <div className="absolute inset-0 flex items-center px-6 sm:px-12 lg:px-20">
+          <h1 id="shop-heading" className="text-white font-heading font-bold text-3xl sm:text-4xl lg:text-5xl leading-tight drop-shadow-md">
+            Shop Wellness Products
+          </h1>
+        </div>
+      </div>
 
+      <section aria-label="Gift cards shop" className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* AIO: introductory prose for LLM crawlers and screen readers */}
-          <ScrollReveal delay={0.05}>
+          <ScrollReveal>
             <div className="text-center max-w-2xl mx-auto mb-12">
               <p className="section-subheading">
                 Give someone the gift of health. Health Pointe Jacksonville gift cards are

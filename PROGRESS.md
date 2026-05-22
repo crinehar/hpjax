@@ -56,6 +56,7 @@
 | `ContactForm` | ✅ | React Hook Form, full ARIA error binding |
 | `ServicePageTemplate` | ✅ | Reusable server template for service pages |
 | `NewsletterForm` | ✅ | Email input, Mailchimp TODO stub |
+| `GiftCardBuyButton` | ✅ | Variant pills, qty selector, opens Shopify checkout in new tab |
 
 ---
 
@@ -64,17 +65,17 @@
 | Item | Status | Notes |
 |---|---|---|
 | `tailwind.config.ts` | ✅ | Brand tokens: primary `#BF9B30`, secondary `#7BA368` |
-| `next.config.mjs` | ✅ | Image remote patterns for hpjax.com |
+| `next.config.mjs` | ✅ | Image remote patterns: hpjax.com, cdn.shopify.com, img.youtube.com |
 | `next-sitemap.config.js` | ✅ | Weekly crawl, robots.txt |
 | `.env.local.example` | ✅ | All 7 API keys stubbed |
 | `.lighthouserc.json` | ✅ | 95 perf / 100 a11y / 100 BP / 100 SEO |
 | Google Fonts | ✅ | Playfair Display (headings) + Inter (body) |
-| JSON-LD | ✅ | LocalBusiness schema on homepage |
+| JSON-LD | ✅ | LocalBusiness (home), ItemList + Product (shop), Service (services) |
 | Canonical URLs | ✅ | Every page |
-| OG metadata | ✅ | Title template, default image |
+| OG metadata | ✅ | Title template, default image, product images on /shop/[handle] |
 | Logo | ✅ | Downloaded to `public/images/logo.png` |
-| Build | ✅ | `npm run build` — 0 errors, 30 routes |
-| Dev server | ✅ | HTTP 200 on `localhost:3000` |
+| Build | ✅ | `npm run build` — 0 errors, 33 routes |
+| Shopify Storefront API | ✅ | Connected — env vars in Vercel (Production + Preview) |
 
 ---
 
@@ -84,9 +85,54 @@
 |---|---|---|
 | **AcuBliss booking iframe** | `app/book/page.tsx` — uncomment the `<iframe>` | none (public URL) |
 | **WordPress blog** | `app/blog/page.tsx` + `app/blog/[slug]/page.tsx` | `WORDPRESS_API_URL` |
-| **Shopify gift cards** | ✅ Connected — `app/shop/` live | domain + token in `.env.local` |
+| **Shopify gift cards** | ✅ Connected — `app/shop/` live | domain + token in Vercel |
 | **Resend contact form** | Create `app/actions/contact.ts` server action | `RESEND_API_KEY` |
 | **Mailchimp newsletter** | `components/NewsletterForm.tsx` | `MAILCHIMP_API_KEY`, `MAILCHIMP_AUDIENCE_ID`, `MAILCHIMP_SERVER_PREFIX` |
+
+---
+
+## 🚀 Pre-Launch Checklist — Must Complete Before Go-Live
+
+### Shopify
+- [ ] Upgrade Shopify dev store to **Basic plan ($29/mo)** — removes password gate, enables live checkout
+- [ ] Enable remaining gift card variants in Shopify admin (confirm all $25/$50/$100 are `availableForSale`)
+- [ ] Add remaining gift card products from WooCommerce store into Shopify (50 Min Massage GC, etc.)
+- [ ] Connect custom domain in Shopify (for checkout branding — shows `hpjax.com` not `hpjax.myshopify.com`)
+- [ ] Set up Shopify Payments or Stripe as payment processor
+- [ ] Configure gift card email delivery template in Shopify admin
+- [ ] Remove Shopify demo products (snowboards, ski wax) — only gift cards should be in the store
+
+### Vercel Environment Variables
+- [ ] Confirm `NEXT_PUBLIC_SHOPIFY_DOMAIN` and `NEXT_PUBLIC_SHOPIFY_STOREFRONT_TOKEN` are set for **Production + Preview + Development** (currently Production only)
+- [ ] Add `RESEND_API_KEY` when contact form is wired
+- [ ] Add `MAILCHIMP_*` vars when newsletter is wired
+- [ ] Add `WORDPRESS_API_URL` when blog is connected
+
+### Analytics & Tracking (needs IDs from client)
+- [ ] **Google Analytics 4** — add `GA_MEASUREMENT_ID` env var, wire `next/script strategy="afterInteractive"` in `app/layout.tsx`
+- [ ] **Google Tag Manager** — alternative to direct GA4; add GTM container snippet via `next/script`
+- [ ] **Facebook Pixel** — add `FB_PIXEL_ID` env var, wire Meta Pixel base code via `next/script strategy="afterInteractive"`
+- [ ] **Google Search Console** — verify ownership (HTML tag method via Next.js `verification` metadata)
+- [ ] **Vercel Analytics** — already in `package.json`, just needs `<Analytics />` added to `app/layout.tsx`
+- [ ] **Vercel Speed Insights** — same, add `<SpeedInsights />` to `app/layout.tsx`
+
+### Content
+- [ ] Real hero photos for homepage and service pages
+- [ ] Team member names, headshots, and bios (`/our-team`)
+- [ ] Final copy review on all service pages (pull verbatim from live WP site)
+- [ ] Google Maps embed on `/contact`
+- [ ] OG image — proper 1200×630 PNG at `public/images/og-default.png`
+- [ ] Favicon / `app/favicon.ico`
+- [ ] Real patient testimonials (replace placeholder carousel)
+- [ ] Privacy Policy page (`/privacy-policy`) — **required before running Facebook Pixel**
+- [ ] Cookie consent banner — **required for GDPR/CCPA compliance with GA4 + FB Pixel**
+
+### SEO & Technical
+- [ ] Submit sitemap to Google Search Console (`https://hpjax.com/sitemap.xml`)
+- [ ] Verify all 301 redirects from old WordPress URLs are in `next.config.mjs`
+- [ ] Run final Lighthouse audit on production URL (target: 100/100/100/100)
+- [ ] Test all forms end-to-end (contact, newsletter)
+- [ ] Test Shopify checkout end-to-end on live paid store
 
 ---
 
@@ -114,25 +160,22 @@
 - [x] `aria-live` region on testimonial carousel
 - [x] Treatment card hover text marked `aria-hidden`
 - [x] Testimonial dots: `role="group"` + `aria-pressed`
+- [x] Compare-at prices labeled `aria-label="Original price $X"`
+- [x] Product prices have full accessible `aria-label`
 - [ ] Full keyboard navigation audit (manual)
 - [ ] Screen reader test (VoiceOver)
 - [ ] Color contrast audit (axe DevTools)
 
 ---
 
-## 🎯 Next Session Priority — ADA Score to 100
+## 🎯 Next Session Priorities
 
-**Current PageSpeed scores (hpjax.vercel.app — 2026-05-21):**
-| Category | Score |
-|---|---|
-| Performance | 92 |
-| Accessibility | 86 ← focus here |
-| Best Practices | 100 ✅ |
-| SEO | 92 |
+1. **ADA Score 86 → 100** — run full Lighthouse accessibility audit, fix all failures
+2. **Analytics** — wire GA4 + FB Pixel once IDs are provided
+3. **Shopify upgrade** — test full checkout end-to-end on paid plan
+4. **WordPress redirects** — map old WP URLs to new routes before DNS cutover
 
-**Goal:** Accessibility 86 → 100. Work through every Lighthouse accessibility failure systematically.
-
-**Known issues to address:**
+**Known ADA issues to address:**
 - [ ] Run full Lighthouse accessibility report and capture all failing audits
 - [ ] Fix any color contrast failures (ink-muted, ink-subtle on white/surface backgrounds)
 - [ ] Audit `<ScrollReveal>` (renders `<div>`) inside `<ul>` — invalid HTML, screen readers affected

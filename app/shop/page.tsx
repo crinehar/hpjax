@@ -6,6 +6,8 @@ import { shopPageSchema } from "@/lib/schema";
 import BookingCTA from "@/components/BookingCTA";
 import ScrollReveal from "@/components/ScrollReveal";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "Gift Cards — Acupuncture & Wellness",
   description:

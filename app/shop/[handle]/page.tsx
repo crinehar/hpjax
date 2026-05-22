@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getGiftCards, getGiftCardByHandle } from "@/lib/shopify";
+import { getGiftCardByHandle } from "@/lib/shopify";
 import { giftCardProductSchema } from "@/lib/schema";
 import GiftCardBuyButton from "@/components/GiftCardBuyButton";
 import BookingCTA from "@/components/BookingCTA";
@@ -11,10 +11,7 @@ interface Props {
   params: { handle: string };
 }
 
-export async function generateStaticParams() {
-  const cards = await getGiftCards().catch(() => []);
-  return cards.map((c) => ({ handle: c.handle }));
-}
+export const dynamic = "force-dynamic";
 
 function fallbackDescription(title: string): string {
   return `Purchase a ${title} from Health Pointe Jacksonville — redeemable for acupuncture, massage therapy, and wellness services in Jacksonville, FL. Gift cards are delivered by email.`;

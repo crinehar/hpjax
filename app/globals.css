@@ -18,7 +18,7 @@
 
   /* Visible focus rings for all interactive elements */
   :focus-visible {
-    @apply outline-2 outline-offset-2 outline-primary rounded-sm;
+    @apply outline-2 outline-offset-2 outline-teal-dark rounded-sm;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -30,23 +30,23 @@
   /* Skip-to-content link — visually hidden until focused */
   .skip-link {
     @apply sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50
-           focus:bg-primary focus:text-white focus:px-4 focus:py-2 focus:rounded
+           focus:bg-teal-dark focus:text-white focus:px-4 focus:py-2 focus:rounded
            focus:font-body focus:text-sm focus:font-semibold;
   }
 
   .btn-primary {
     @apply inline-flex items-center justify-center gap-2
-           bg-primary hover:bg-primary-dark text-white
+           bg-primary text-ink
            font-body font-semibold text-sm px-6 py-3 rounded-md
            transition-all duration-200
            hover:-translate-y-0.5 hover:shadow-md
            active:translate-y-0 active:shadow-none
-           focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-dark;
+           focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-dark;
   }
 
   .btn-secondary {
     @apply inline-flex items-center justify-center gap-2
-           border-2 border-primary text-primary hover:bg-primary hover:text-white
+           border-2 border-primary-dark text-primary-dark hover:bg-primary-dark hover:text-white
            font-body font-semibold text-sm px-6 py-3 rounded-md
            transition-colors duration-200;
   }

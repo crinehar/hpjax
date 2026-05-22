@@ -12,7 +12,7 @@ const config: Config = {
         // Brand extracted from hpjax.com logo
         teal: {
           DEFAULT: "#3FBFAE", // brand teal — decorative / large UI elements
-          dark: "#1E8A7C",    // accessible teal — white text passes 4.6:1 WCAG AA
+          dark: "#1E847C",    // accessible teal — white text 4.53:1 WCAG AA
           foreground: "#FFFFFF",
         },
         primary: {

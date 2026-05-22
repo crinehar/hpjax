@@ -45,11 +45,11 @@ function InstagramIcon({ className }: { className?: string }) {
 
 export default function TopBanner() {
   return (
-    <div className="bg-teal-dark text-white text-sm" role="banner" aria-label="Site utility bar">
+    <div className="bg-teal-dark text-white text-sm" role="region" aria-label="Site utility bar">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-10">
           {/* Left: insurance verification CTA */}
-          <p className="text-white/90">
+          <p className="text-white">
             Verify your{" "}
             <Link
               href="http://admin.mindfulbillingllc.com//patient/add?crpId=USAvXG4oMeMZJ%2FiJW%2Bt0Sw%3D%3D"

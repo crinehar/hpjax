@@ -110,10 +110,17 @@ export default function TestimonialCarousel({
               aria-current={i === index ? "true" : undefined}
               aria-label={`Go to testimonial ${i + 1} of ${testimonials.length}`}
               onClick={() => navigate(i)}
-              className={`w-2.5 h-2.5 rounded-full transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary ${
-                i === index ? "bg-primary w-6" : "bg-gray-300 hover:bg-primary/50"
-              }`}
-            />
+              className="group p-[7px] rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+            >
+              <span
+                className={`block rounded-full transition-all duration-200 ${
+                  i === index
+                    ? "bg-primary w-6 h-2.5"
+                    : "w-2.5 h-2.5 bg-gray-300 group-hover:bg-primary/50"
+                }`}
+                aria-hidden="true"
+              />
+            </button>
           ))}
         </div>
 

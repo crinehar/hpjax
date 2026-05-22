@@ -16,7 +16,7 @@ export default function BookingCTA({
 }: BookingCTAProps) {
   return (
     <section
-      className="bg-gradient-to-br from-primary to-primary-dark py-16"
+      className="bg-gradient-to-br from-teal-dark to-ink py-16"
       aria-label="Book an appointment"
     >
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -29,11 +29,11 @@ export default function BookingCTA({
           <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
             {heading}
           </h2>
-          <p className="text-lg text-white/85 leading-relaxed mb-8 max-w-2xl mx-auto">{body}</p>
+          <p className="text-lg text-gray-200 leading-relaxed mb-8 max-w-2xl mx-auto">{body}</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/book"
-              className="inline-flex items-center justify-center gap-2 bg-white text-primary hover:bg-gray-50 font-body font-bold text-base px-8 py-4 rounded-md transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              className="inline-flex items-center justify-center gap-2 bg-primary text-ink font-body font-bold text-base px-8 py-4 rounded-md transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
             >
               {ctaLabel}
             </Link>

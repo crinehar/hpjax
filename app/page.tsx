@@ -155,7 +155,7 @@ export default function HomePage() {
               Our team has advanced training and expertise in women&apos;s health, fertility, prenatal acupuncture, and complex chronic pain conditions.
             </p>
           </ScrollReveal>
-          <ul className="flex flex-nowrap items-center justify-center gap-x-10">
+          <div className="flex flex-nowrap items-center justify-center gap-x-10">
             {[
               { src: "/images/credential-logo-aborm.jpg", alt: "ABORM — American Board of Oriental Reproductive Medicine certified", width: 160, height: 56 },
               { src: "/images/credential-logo-nccaom.png", alt: "NCCAOM — National Certification Commission for Acupuncture and Oriental Medicine", width: 160, height: 56 },
@@ -164,7 +164,7 @@ export default function HomePage() {
               { src: "/images/credential-logo-expertise-best-acupuncturist-jacksonville.png", alt: "Expertise.com — Best Acupuncturists in Jacksonville 2022", width: 400, height: 400 },
             ].map(({ src, alt, width, height }, i) => (
               <ScrollReveal key={src} delay={i * 0.1} direction="up">
-                <li className="flex-shrink-0">
+                <div className="flex-shrink-0">
                   <Image
                     src={src}
                     alt={alt}
@@ -172,10 +172,10 @@ export default function HomePage() {
                     height={height}
                     className="h-14 w-auto object-contain opacity-75 hover:opacity-100 transition-opacity duration-300"
                   />
-                </li>
+                </div>
               </ScrollReveal>
             ))}
-          </ul>
+          </div>
         </div>
       </section>
 
@@ -189,7 +189,7 @@ export default function HomePage() {
                 <h2 id="fertility-heading" className="text-3xl md:text-4xl font-heading font-bold text-white leading-tight mb-4">
                   Jacksonville&apos;s fertility programs
                 </h2>
-                <p className="text-white/80 leading-relaxed mb-6">
+                <p className="text-white leading-relaxed mb-6">
                   Our programs combine acupuncture and Traditional Chinese medicine along with functional medicine to optimize your fertility journey. We provide natural approaches for endometriosis, &amp; PCOS. Whether you are trying to conceive naturally, or already undergoing ART (Artificial Reproductive Technology) we are here to help!
                 </p>
                 <Link href="/services/fertility-acupuncture-jacksonville-fl-aborm-certified-dr-julee-miller/" className="btn-primary">
@@ -250,10 +250,10 @@ export default function HomePage() {
               Our specialized treatments support fertility, women&apos;s health, neurological conditions, chronic pain conditions, emotional balance, and more. We provide personalized care to restore balance and improve overall well-being.
             </p>
           </ScrollReveal>
-          <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div role="list" className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
             {treatments.map((t, i) => (
               <ScrollReveal key={t.href + t.label} delay={i * 0.05} className="h-full">
-                <li className="h-full">
+                <div role="listitem" className="h-full">
                   <Link
                     href={t.href}
                     className="group relative block rounded-xl overflow-hidden aspect-[3/4] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-dark"
@@ -281,10 +281,10 @@ export default function HomePage() {
                       </span>
                     </div>
                   </Link>
-                </li>
+                </div>
               </ScrollReveal>
             ))}
-          </ul>
+          </div>
         </div>
       </section>
 

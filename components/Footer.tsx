@@ -19,7 +19,7 @@ const quickLinks = [
   { label: "Women's Health", href: "/womens-health" },
   { label: "Testimonials", href: "/testimonials" },
   { label: "Blog", href: "/blog" },
-  { label: "Gift Cards", href: "/gift-cards" },
+  { label: "Gift Cards", href: "/shop" },
   { label: "Contact", href: "/contact" },
   { label: "Accessibility", href: "/accessibility" },
 ];
@@ -128,7 +128,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-gray-700 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-gray-500">
+        <div className="mt-12 pt-8 border-t border-gray-700 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-gray-400">
           <p>© {new Date().getFullYear()} Health Pointe Jacksonville. All rights reserved.</p>
           <div className="flex gap-4">
             <Link href="/accessibility" className="hover:text-primary transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary rounded-sm">

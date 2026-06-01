@@ -1,7 +1,7 @@
 # Health Pointe Jacksonville — Rebuild Progress
 
 ## Status: Lighthouse 93 Perf / 100 ADA / 100 BP / 100 SEO ✅
-**Last updated:** 2026-05-22
+**Last updated:** 2026-06-01
 
 ### Lighthouse Benchmark Scores (2026-05-22 — hpjax.vercel.app)
 | Category | Score |
@@ -21,8 +21,14 @@ These are the baseline scores to maintain before go-live. Do not merge PRs that 
 |---|---|---|
 | `/` | ✅ Scaffolded | Hero, services grid, testimonials, BookingCTA, JSON-LD |
 | `/about` | ✅ Scaffolded | Mission copy placeholder |
-| `/our-team` | ✅ Scaffolded | Placeholder silhouette cards — needs real team photos + bios |
-| `/testimonials` | ✅ Scaffolded | Static testimonials — swap with live reviews |
+| `/our-team` | ✅ Complete | Featured Dr. Miller card, full team grid, real photos, ADA/SEO/AIO audited |
+| `/our-team/dr-julee-miller` | 🔲 Next session | Individual team member sub-pages |
+| `/our-team/denise` | 🔲 Next session | |
+| `/our-team/yaira` | 🔲 Next session | |
+| `/our-team/damaris` | 🔲 Next session | |
+| `/our-team/angel` | 🔲 Next session | |
+| `/our-team/dana` | 🔲 Next session | |
+| `/testimonials` | ✅ Complete | 129 real WP reviews, category filter + search, Google badge (319), AggregateRating schema |
 | `/contact` | ✅ Scaffolded | React Hook Form wired; needs Resend server action |
 | `/accessibility` | ✅ Scaffolded | WCAG 2.1 AA statement |
 | `/book` | ✅ Scaffolded | AcuBliss iframe container — **needs src URL uncommented** |
@@ -128,12 +134,12 @@ These are the baseline scores to maintain before go-live. Do not merge PRs that 
 
 ### Content
 - [ ] Real hero photos for homepage and service pages
-- [ ] Team member names, headshots, and bios (`/our-team`)
+- [x] Team member names, headshots, and bios — complete on `/our-team`
 - [ ] Final copy review on all service pages (pull verbatim from live WP site)
 - [ ] Google Maps embed on `/contact`
 - [ ] OG image — proper 1200×630 PNG at `public/images/og-default.png`
 - [ ] Favicon / `app/favicon.ico`
-- [ ] Real patient testimonials (replace placeholder carousel)
+- [x] Real patient testimonials — 129 WP reviews imported, live on /testimonials
 - [ ] Privacy Policy page (`/privacy-policy`) — **required before running Facebook Pixel**
 - [ ] Cookie consent banner — **required for GDPR/CCPA compliance with GA4 + FB Pixel**
 
@@ -149,7 +155,7 @@ These are the baseline scores to maintain before go-live. Do not merge PRs that 
 ## Still Needed (Content)
 
 - [ ] Real hero photos for homepage and service pages
-- [ ] Team member names, headshots, and bios (`/our-team`)
+- [x] Team member names, headshots, and bios — complete on `/our-team`
 - [ ] Final copy review on all service pages
 - [ ] Google Maps embed on `/contact`
 - [ ] OG image — proper 1200×630 PNG at `public/images/og-default.png`
@@ -180,10 +186,11 @@ These are the baseline scores to maintain before go-live. Do not merge PRs that 
 
 ## 🎯 Next Session Priorities
 
-1. **Analytics** — wire GA4 + FB Pixel once IDs are provided
-2. **Shopify upgrade** — test full checkout end-to-end on paid plan
-3. **WordPress redirects** — map old WP URLs to new routes before DNS cutover
-4. **Run Lighthouse** — verify ADA score reached 100 after fixes in this session
+1. **Team sub-pages** — build `/our-team/dr-julee-miller`, `/denise`, `/yaira`, `/damaris`, `/angel`, `/dana` (fetch live WP copy for each)
+2. **Analytics** — wire GA4 + FB Pixel once IDs are provided
+3. **Shopify upgrade** — test full checkout end-to-end on paid plan
+4. **WordPress redirects** — map old WP URLs to new routes before DNS cutover
+5. **Run Lighthouse** — verify scores after this session's changes
 
 **ADA fixes completed (2026-05-22):**
 - [x] Color contrast: teal-dark darkened #1E8A7C → #1E847C (white text 4.53:1)

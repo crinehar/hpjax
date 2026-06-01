@@ -14,7 +14,7 @@ export const drJuleeMillerEntity = {
   name: "Dr. Julee Miller",
   honorificPrefix: "Dr.",
   jobTitle: "Acupuncturist",
-  image: `${SITE_URL}/images/team/dr-julee-miller.jpg`,
+  image: `${SITE_URL}/images/team/dr-julee-miller-acupuncturist-jacksonville-fl.jpg`,
   worksFor: { "@id": BUSINESS_ID },
   hasCredential: [
     { "@type": "EducationalOccupationalCredential", name: "DAcCHM" },
@@ -375,16 +375,48 @@ export function testimonialsPageSchema(reviews: { name: string; quote: string; d
 
 /** Team / practitioner page */
 export function teamPageSchema() {
+  const staff = [
+    { name: "Denise", jobTitle: "Lead Licensed Massage Therapist" },
+    { name: "Yaira", jobTitle: "Licensed Massage Therapist" },
+    { name: "Damaris", jobTitle: "Office Manager" },
+    { name: "Angel", jobTitle: "Patient Care Specialist" },
+    { name: "Dana", jobTitle: "Patient Care Specialist" },
+  ];
+
   return {
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "WebPage",
+        "@id": `${SITE_URL}/our-team/#webpage`,
+        name: "Meet Our Team Jacksonville, FL | Health Pointe Jacksonville",
+        description:
+          "Meet the Health Pointe Jacksonville team, including acupuncture physicians and massage therapists. Learn backgrounds, focus areas, and book online today.",
+        url: `${SITE_URL}/our-team/`,
+        isPartOf: { "@id": BUSINESS_ID },
+        breadcrumb: breadcrumbSchema([
+          { name: "Home", href: "/" },
+          { name: "Our Team", href: "/our-team" },
+        ]),
+      },
+      {
         ...drJuleeMillerEntity,
         description:
           "Dr. Julee Miller is a board-certified Doctor of Acupuncture and Chinese Herbal Medicine (DAcCHM) and Florida Licensed Acupuncture Physician (AP). She holds the FABORM credential — making her one of Jacksonville, FL's top ABORM-certified holistic fertility specialists.",
-        url: `${SITE_URL}/our-team/`,
+        url: `${SITE_URL}/our-team/dr-julee-miller/`,
       },
-      { ...localBusinessEntity },
+      {
+        ...localBusinessEntity,
+        employee: [
+          { "@id": PRACTITIONER_ID },
+          ...staff.map((s) => ({
+            "@type": "Person",
+            name: s.name,
+            jobTitle: s.jobTitle,
+            worksFor: { "@id": BUSINESS_ID },
+          })),
+        ],
+      },
     ],
   };
 }

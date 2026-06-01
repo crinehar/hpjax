@@ -334,6 +334,45 @@ export function giftCardProductSchema({
   };
 }
 
+/** Testimonials page — AggregateRating + sample Review objects */
+export function testimonialsPageSchema(reviews: { name: string; quote: string; date: string; category: string }[]) {
+  const sample = reviews.slice(0, 20);
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        ...localBusinessEntity,
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: "5",
+          bestRating: "5",
+          worstRating: "1",
+          reviewCount: String(reviews.length),
+        },
+        review: sample.map((r) => ({
+          "@type": "Review",
+          author: { "@type": "Person", name: r.name },
+          reviewBody: r.quote,
+          datePublished: r.date,
+          reviewRating: {
+            "@type": "Rating",
+            ratingValue: "5",
+            bestRating: "5",
+          },
+          about: {
+            "@type": "MedicalTherapy",
+            name: r.category,
+          },
+        })),
+      },
+      breadcrumbSchema([
+        { name: "Home", href: "/" },
+        { name: "Patient Testimonials", href: "/testimonials" },
+      ]),
+    ],
+  };
+}
+
 /** Team / practitioner page */
 export function teamPageSchema() {
   return {

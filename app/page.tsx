@@ -192,7 +192,10 @@ export default function HomePage() {
                 <p className="text-white leading-relaxed mb-6">
                   Our programs combine acupuncture and Traditional Chinese medicine along with functional medicine to optimize your fertility journey. We provide natural approaches for endometriosis, &amp; PCOS. Whether you are trying to conceive naturally, or already undergoing ART (Artificial Reproductive Technology) we are here to help!
                 </p>
-                <Link href="/services/fertility-acupuncture-jacksonville-fl-aborm-certified-dr-julee-miller/" className="btn-primary">
+                <Link href="/book" className="btn-primary">
+                  Book Now
+                </Link>
+                <Link href="/services/fertility-acupuncture-jacksonville-fl-aborm-certified-dr-julee-miller/" className="block mt-3 text-sm text-white/80 hover:text-white underline underline-offset-2">
                   Explore Fertility Programs
                 </Link>
               </ScrollReveal>
@@ -232,7 +235,10 @@ export default function HomePage() {
                 <p className="text-ink-muted leading-relaxed mb-6">
                   Regain confidence and control and return to a activities you enjoy with pelvic floor acupuncture treatment. Treating pelvic pain, bladder issues, post partum dysfunction and post-surgery recovery with personalized acupuncture care. Treatments may include acupuncture, dry needling, trigger point release, and therapeutic exercises. Whether post-pregnancy or managing an injury, our services support your recovery and strength.
                 </p>
-                <Link href="/womens-health/" className="btn-primary">
+                <Link href="/book" className="btn-primary">
+                  Book Now
+                </Link>
+                <Link href="/womens-health/" className="block mt-3 text-sm text-teal-dark hover:text-teal underline underline-offset-2">
                   Women&apos;s Health Services
                 </Link>
               </ScrollReveal>

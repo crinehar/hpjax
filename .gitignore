@@ -27,3 +27,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# large WordPress XML exports (data already imported into lib/)
+scripts/healthpointejacksonville.blogpost6126.xml

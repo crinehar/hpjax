@@ -154,19 +154,6 @@ export default function ContactPage() {
                   </a>
                 </div>
 
-                {/* Google Maps embed */}
-                <div className="mt-8 rounded-xl overflow-hidden border border-surface-muted shadow-sm" style={{ height: "280px" }}>
-                  <iframe
-                    src="https://maps.google.com/maps?q=Health+Pointe+Jacksonville+3840+Belfort+Rd+Suite+305+Jacksonville+FL+32216&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                    width="100%"
-                    height="280"
-                    style={{ border: 0 }}
-                    allowFullScreen
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    title="Health Pointe Jacksonville location map"
-                  />
-                </div>
               </ScrollReveal>
             </div>
 

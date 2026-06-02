@@ -3,12 +3,14 @@ import Image from "next/image";
 import Link from "next/link";
 import ScrollReveal from "@/components/ScrollReveal";
 import BookingCTA from "@/components/BookingCTA";
-import { servicePageSchema, faqSchema, breadcrumbSchema } from "@/lib/schema";
+import { faqSchema, breadcrumbSchema, localBusinessEntity, drJuleeMillerEntity } from "@/lib/schema";
+import { REVIEWS_DATA } from "@/lib/reviews-data";
+import TestimonialCarousel from "@/components/TestimonialCarousel";
 
 export const metadata: Metadata = {
-  title: "Massage Therapy Jacksonville, FL | Health Pointe Jacksonville",
+  title: "Voted Best in Jax Medical Massage Therapy",
   description:
-    "Medical massage therapy in Jacksonville, FL. Deep tissue, prenatal, sports massage, Manual Lymphatic Drainage, and more. Voted Jacksonville's top massage therapy clinic. Call (904) 448-0046.",
+    "Health Pointe Jacksonville's massage therapists have over 25 years experience treating chronic pain conditions. Book Now",
   alternates: { canonical: "https://hpjax.com/services/massage-therapy-jacksonville" },
   openGraph: {
     title: "Massage Therapy Jacksonville, FL | Health Pointe Jacksonville",
@@ -22,34 +24,34 @@ const serviceTypes = [
   {
     heading: "Deep Tissue & Medical Massage",
     items: [
-      "Chronic pain conditions",
-      "Postural imbalances",
-      "Repetitive strain injuries",
-      "Myofascial restrictions",
-      "Trigger points & muscle knots",
+      { label: "Chronic pain conditions" },
+      { label: "Postural imbalances" },
+      { label: "Repetitive strain injuries" },
+      { label: "Myofascial restrictions" },
+      { label: "Trigger points & muscle knots" },
     ],
   },
   {
     heading: "Sports & Performance Massage",
     items: [
-      "Injury prevention & recovery",
-      "Muscle tightness & soreness",
-      "Joint mobility improvement",
-      "Tendonitis & overuse injuries",
-      "Pre-event & post-event care",
+      { label: "Injury prevention & recovery" },
+      { label: "Muscle tightness & soreness" },
+      { label: "Joint mobility improvement" },
+      { label: "Tendonitis & overuse injuries" },
+      { label: "Pre-event & post-event care" },
     ],
   },
   {
     heading: "Women's Health Massage",
     items: [
-      "Fertility Massage",
-      "Pregnancy / prenatal massage",
-      "Postpartum massage",
-      "Lower back & hip pain",
-      "Sciatica & nerve discomfort",
-      "Swelling & fluid retention",
-      "Postpartum recovery support",
-      "Stress & sleep improvement",
+      { label: "Fertility Massage", href: "/blog/nurture-your-path-to-parenthood-with-fertility-massage/" },
+      { label: "Pregnancy / prenatal massage", href: "/blog/the-transformative-benefits-of-prenatal-postpartum-massage-your-guide-to-supported-motherhood/" },
+      { label: "Postpartum massage" },
+      { label: "Lower back & hip pain" },
+      { label: "Sciatica & nerve discomfort" },
+      { label: "Swelling & fluid retention" },
+      { label: "Postpartum recovery support" },
+      { label: "Stress & sleep improvement" },
     ],
   },
 ];
@@ -69,22 +71,44 @@ const faqs = [
   },
 ];
 
+const MASSAGE_REVIEW_SLUGS = ["jada-l", "erin-g", "hunter-d", "janice-h", "pam-a", "brittney-r"];
+
+const massageReviews = MASSAGE_REVIEW_SLUGS
+  .map((slug, i) => {
+    const r = REVIEWS_DATA.find((r) => r.slug === slug)!;
+    return { id: i + 1, name: r.name, quote: r.quote };
+  });
+
+const SITE_URL = "https://hpjax.com";
+const PAGE_URL = `${SITE_URL}/services/massage-therapy-jacksonville/`;
+
 export default function MassageTherapyPage() {
   const schema = {
     "@context": "https://schema.org",
     "@graph": [
-      servicePageSchema({
-        name: "Massage Therapy Jacksonville, FL",
+      {
+        "@type": "MedicalWebPage",
+        "@id": `${PAGE_URL}#webpage`,
+        name: "Voted Best in Jax Medical Massage Therapy | Health Pointe Jacksonville",
         description:
-          "Medical massage therapy in Jacksonville, FL including deep tissue, prenatal, sports massage, Manual Lymphatic Drainage, and fertility massage at Health Pointe Jacksonville.",
-        url: "/services/massage-therapy-jacksonville/",
-        alternateName: "Medical Massage Jacksonville",
-      }),
+          "Health Pointe Jacksonville's massage therapists have over 25 years experience treating chronic pain conditions. Deep tissue, prenatal, sports massage, MLD, and fertility massage in Jacksonville, FL.",
+        url: PAGE_URL,
+        isPartOf: { "@id": `${SITE_URL}/#business` },
+        about: {
+          "@type": "MedicalTherapy",
+          name: "Massage Therapy",
+          alternateName: "Medical Massage",
+          relevantSpecialty: "Physical Therapy",
+        },
+        provider: { "@id": `${SITE_URL}/#practitioner` },
+        breadcrumb: breadcrumbSchema([
+          { name: "Home", href: "/" },
+          { name: "Massage Therapy", href: "/services/massage-therapy-jacksonville/" },
+        ]),
+      },
       faqSchema(faqs.map((f) => ({ question: f.q, answer: f.a }))),
-      breadcrumbSchema([
-        { name: "Home", href: "/" },
-        { name: "Massage Therapy", href: "/services/massage-therapy-jacksonville/" },
-      ]),
+      { ...localBusinessEntity },
+      { ...drJuleeMillerEntity },
     ],
   };
 
@@ -140,6 +164,17 @@ export default function MassageTherapyPage() {
               , two of the most frequently requested areas of expertise.</p>
             <p>Whether you&apos;re recovering from an injury, managing chronic pain, or seeking support through pregnancy, our team delivers thoughtful, personalized care.</p>
           </ScrollReveal>
+          <ScrollReveal className="mt-8 text-center">
+            <a
+              href="https://healthpointejacksonville.acubliss.app/portal/booking/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Book Your Session Now (opens in new tab)"
+              className="btn-primary text-base px-8 py-4"
+            >
+              Book Your Session Now
+            </a>
+          </ScrollReveal>
         </div>
       </section>
 
@@ -156,9 +191,15 @@ export default function MassageTherapyPage() {
                   <h3 className="font-heading font-bold text-teal-dark text-xl mb-5">{type.heading}</h3>
                   <div role="list" className="space-y-2">
                     {type.items.map((item) => (
-                      <div key={item} role="listitem" className="flex items-start gap-3">
+                      <div key={item.label} role="listitem" className="flex items-start gap-3">
                         <span className="mt-1.5 w-2 h-2 flex-shrink-0 rounded-full bg-teal-dark" aria-hidden="true" />
-                        <span className="text-ink-muted text-sm leading-snug">{item}</span>
+                        {item.href ? (
+                          <Link href={item.href} className="text-teal-dark text-sm leading-snug underline underline-offset-2 hover:text-teal transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-dark rounded">
+                            {item.label}
+                          </Link>
+                        ) : (
+                          <span className="text-ink-muted text-sm leading-snug">{item.label}</span>
+                        )}
                       </div>
                     ))}
                   </div>
@@ -175,33 +216,64 @@ export default function MassageTherapyPage() {
           <ScrollReveal className="text-center mb-10">
             <h2 id="deep-tissue-heading" className="section-heading">Targeted Relief With Deep Tissue Massage</h2>
           </ScrollReveal>
-          <ScrollReveal className="space-y-5 text-ink-muted leading-relaxed">
-            <p>Deep tissue massage focuses on the deeper layers of muscle and connective tissue to address chronic pain, postural imbalances, and injury recovery.</p>
-            <p>This specialized approach is ideal for relieving repetitive strain and muscle tension.</p>
-            <p>Common techniques include Neuromuscular Therapy (trigger point therapy) and Myofascial Release, followed by gentle stretching to enhance mobility and promote long-term relief.</p>
+          <ScrollReveal>
+            <p className="text-ink-muted leading-relaxed">
+              Deep tissue massage focuses on the deeper layers of muscle and connective tissue to address chronic pain, postural imbalances, and injury recovery. This specialized approach is ideal for relieving repetitive strain and muscle tension. Common techniques include Neuromuscular Therapy (trigger point therapy) and Myofascial Release, followed by gentle stretching to enhance mobility and promote long-term relief.
+            </p>
           </ScrollReveal>
+        </div>
+
+        {/* 3-image grid */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-14">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {[
+              { src: "/images/pregnancy-massage-jacksonville-fl.jpg", label: "Pregnancy Massage" },
+              { src: "/images/sports-massage-jacksonville-fl.jpg", label: "Sports Massage" },
+              { src: "/images/deep-tissue-massage-jacksonville-fl.jpg", label: "Deep Tissue Massage" },
+            ].map(({ src, label }) => (
+              <figure key={label} className="relative overflow-hidden rounded-2xl aspect-[4/3]">
+                <Image
+                  src={src}
+                  alt=""
+                  fill
+                  sizes="(max-width: 640px) 100vw, 33vw"
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-ink/30" aria-hidden="true" />
+                <figcaption className="absolute bottom-4 left-0 right-0 text-center text-white font-semibold text-base drop-shadow">
+                  {label}
+                </figcaption>
+              </figure>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* ── Discover the Healing Power ──────────────────────────────────────── */}
-      <section aria-labelledby="healing-heading" className="py-20 bg-teal-dark">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section aria-labelledby="healing-heading" className="relative py-24 overflow-hidden">
+        <Image
+          src="/images/therapeutic-massage-health-pointe-jacksonville.jpg"
+          alt="Massage therapist providing therapeutic treatment at Health Pointe Jacksonville"
+          fill
+          sizes="100vw"
+          className="object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-ink/60" aria-hidden="true" />
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <ScrollReveal>
             <h2 id="healing-heading" className="font-heading font-bold text-white text-3xl md:text-4xl mb-6">
               Discover the Healing Power of Therapeutic Massage
             </h2>
-            <p className="text-white leading-relaxed mb-8 max-w-2xl mx-auto">
+            <p className="text-white leading-relaxed max-w-2xl mx-auto mb-8">
               Feel the difference expert bodywork can make. Whether you&apos;re struggling with chronic pain, recovering from injury, navigating tension and stress, or simply prioritizing your well-being, our massage therapists create a personalized experience designed to support your body&apos;s natural healing process.
             </p>
-            <a
-              href="https://healthpointejacksonville.acubliss.app/portal/booking/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Book Your Session Now (opens in new tab)"
+            <Link
+              href="/blog/nurture-your-path-to-parenthood-with-fertility-massage/"
+              aria-label="Learn more about fertility massage"
               className="inline-flex items-center justify-center gap-2 bg-white text-teal-dark font-body font-bold text-base px-8 py-4 rounded-md hover:bg-teal hover:text-white transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
             >
-              Book Your Session Now
-            </a>
+              Learn More
+            </Link>
           </ScrollReveal>
         </div>
       </section>
@@ -233,12 +305,24 @@ export default function MassageTherapyPage() {
             <p className="text-ink-muted leading-relaxed mb-4 max-w-2xl mx-auto">
               Your massage session is just the beginning of your path to greater wellness.
             </p>
-            <p className="text-ink-muted leading-relaxed max-w-2xl mx-auto">
+            <p className="text-ink-muted leading-relaxed max-w-2xl mx-auto mb-8">
               To extend the benefits of your treatment, we offer guidance on simple self-care practices and recommend a follow-up schedule tailored to your body&apos;s needs.
             </p>
+            <a
+              href="https://healthpointejacksonville.acubliss.app/portal/booking/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Book Your Session Now (opens in new tab)"
+              className="btn-primary text-base px-8 py-4"
+            >
+              Book Your Session Now
+            </a>
           </ScrollReveal>
         </div>
       </section>
+
+      {/* ── Reviews ─────────────────────────────────────────────────────────── */}
+      <TestimonialCarousel testimonials={massageReviews} />
 
       {/* ── Address ─────────────────────────────────────────────────────────── */}
       <section aria-label="Clinic location" className="py-12 bg-surface text-center border-t border-surface-muted">

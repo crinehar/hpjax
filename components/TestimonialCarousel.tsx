@@ -101,31 +101,8 @@ export default function TestimonialCarousel({
           Testimonial {index + 1} of {testimonials.length}
         </div>
 
-        {/* Navigation dots */}
-        <div className="flex justify-center gap-2 mt-8" role="group" aria-label="Testimonial navigation">
-          {testimonials.map((t, i) => (
-            <button
-              key={t.id}
-              aria-pressed={i === index}
-              aria-current={i === index ? "true" : undefined}
-              aria-label={`Go to testimonial ${i + 1} of ${testimonials.length}`}
-              onClick={() => navigate(i)}
-              className="group p-[7px] rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
-            >
-              <span
-                className={`block rounded-full transition-all duration-200 ${
-                  i === index
-                    ? "bg-primary w-6 h-2.5"
-                    : "w-2.5 h-2.5 bg-gray-300 group-hover:bg-primary/50"
-                }`}
-                aria-hidden="true"
-              />
-            </button>
-          ))}
-        </div>
-
         {/* Prev / Next */}
-        <div className="flex justify-center gap-4 mt-6">
+        <div className="flex justify-center items-center gap-6 mt-8">
           <button
             onClick={() => navigate(index === 0 ? testimonials.length - 1 : index - 1)}
             aria-label="Previous testimonial"
@@ -135,6 +112,10 @@ export default function TestimonialCarousel({
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
           </button>
+          <span className="text-sm text-ink-subtle tabular-nums" aria-hidden="true">
+            {index + 1} / {testimonials.length}
+          </span>
+
           <button
             onClick={() => navigate(index === testimonials.length - 1 ? 0 : index + 1)}
             aria-label="Next testimonial"

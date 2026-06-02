@@ -140,7 +140,7 @@ export default function OurTeamPage() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Book Your Session Now (opens in new tab)"
-              className="inline-flex items-center justify-center gap-2 bg-teal-dark text-white font-body font-semibold text-sm px-6 py-3 rounded-md transition-all duration-200 hover:bg-teal hover:-translate-y-0.5 hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-dark mb-14"
+              className="btn-primary mb-14"
             >
               Book Your Session Now
             </a>

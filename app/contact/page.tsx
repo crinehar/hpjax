@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import ScrollReveal from "@/components/ScrollReveal";
+import LazyContactForm from "@/components/LazyContactForm";
 import { localBusinessEntity, breadcrumbSchema } from "@/lib/schema";
 
 const contactPageSchema = {
@@ -40,6 +41,10 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
+      {/* Preconnect to form domain so it loads faster when it enters view */}
+      <link rel="preconnect" href="https://api.leadconnectorhq.com" />
+      <link rel="dns-prefetch" href="https://link.msgsndr.com" />
+
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(contactPageSchema) }}
@@ -167,28 +172,7 @@ export default function ContactPage() {
 
             {/* ── Right: iframe form ──────────────────────────────────────── */}
             <div className="lg:col-span-2">
-              <ScrollReveal delay={0.1}>
-                {/* Height set to fully show all fields including reCAPTCHA and submit */}
-                <div className="bg-white rounded-2xl overflow-hidden" style={{ minHeight: "850px" }}>
-                  <iframe
-                    src="https://api.leadconnectorhq.com/widget/form/vLGgFnxHdlG1JLKDnAwu"
-                    style={{ width: "100%", height: "850px", border: "none", borderRadius: "3px" }}
-                    id="inline-vLGgFnxHdlG1JLKDnAwu"
-                    data-layout='{"id":"INLINE"}'
-                    data-trigger-type="alwaysShow"
-                    data-trigger-value=""
-                    data-activation-type="alwaysActivated"
-                    data-activation-value=""
-                    data-deactivation-type="neverDeactivate"
-                    data-deactivation-value=""
-                    data-form-name="Website Contact Form - Services Options"
-                    data-height="668"
-                    data-layout-iframe-id="inline-vLGgFnxHdlG1JLKDnAwu"
-                    data-form-id="vLGgFnxHdlG1JLKDnAwu"
-                    title="Website Contact Form - Services Options"
-                  />
-                </div>
-              </ScrollReveal>
+              <LazyContactForm />
             </div>
           </div>
         </div>

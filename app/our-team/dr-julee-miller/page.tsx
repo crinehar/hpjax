@@ -268,12 +268,10 @@ export default function DrJuleeMillerPage() {
           </ScrollReveal>
           <dl className="space-y-6">
             {faqs.map(({ q, a }) => (
-              <ScrollReveal key={q}>
-                <div className="bg-white rounded-2xl px-7 py-6 shadow-sm border border-surface-muted">
-                  <dt className="font-heading font-semibold text-ink text-lg mb-3">{q}</dt>
-                  <dd className="text-ink-muted leading-relaxed">{a}</dd>
-                </div>
-              </ScrollReveal>
+              <div key={q} className="bg-white rounded-2xl px-7 py-6 shadow-sm border border-surface-muted">
+                <dt className="font-heading font-semibold text-ink text-lg mb-3">{q}</dt>
+                <dd className="text-ink-muted leading-relaxed">{a}</dd>
+              </div>
             ))}
           </dl>
         </div>

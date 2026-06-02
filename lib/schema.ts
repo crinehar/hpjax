@@ -373,6 +373,135 @@ export function testimonialsPageSchema(reviews: { name: string; quote: string; d
   };
 }
 
+/** Dr. Julee Miller individual profile page */
+export function drJuleeMillerPageSchema() {
+  const faqs = [
+    {
+      question: "Is Dr. Julee Miller ABORM certified?",
+      answer:
+        "Yes. Dr. Miller is Jacksonville's top-rated ABORM board-certified holistic fertility specialist and has helped women and couples successfully navigate their journey to parenthood since 2008, supporting natural conception and Advanced Reproductive Therapies such as IVF, IUI, and egg freezing.",
+    },
+    {
+      question: "What conditions does Dr. Julee Miller treat?",
+      answer:
+        "Dr. Miller specializes in Women's Health and Infertility, pelvic floor dysfunction, hormone imbalances, endometriosis, PCOS, postpartum care, chronic pain, arthritis, migraine headaches, nerve pain, neurological disorders, shingles, and autoimmune conditions.",
+    },
+    {
+      question: "How many years of experience does Dr. Julee Miller have?",
+      answer:
+        "Dr. Julee Miller has over 20 years of experience as a Doctor of Acupuncture and Chinese Medicine. Her career has included treating professional sports injuries, pain management, and serving as a member of the 2004 Olympic Sports Rehabilitation Team in Athens, Greece.",
+    },
+    {
+      question: "Is Dr. Miller recognized as an Endometriosis Specialist?",
+      answer:
+        "Yes. Dr. Miller is recognized as an Endometriosis Specialist on iCareBetter, a distinction earned through a rigorous application process, review of education and certifications, and patient recommendations. She is also endorsed by many Jacksonville-area endocrinologists as a trusted referral source.",
+    },
+    {
+      question: "Where is Dr. Julee Miller located?",
+      answer:
+        "Dr. Julee Miller practices at Health Pointe Jacksonville, located at 3840 Belfort Rd STE 305, Jacksonville, FL 32216. You can reach the clinic at (904) 448-0046.",
+    },
+  ];
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ProfilePage",
+        "@id": `${SITE_URL}/our-team/dr-julee-miller/#webpage`,
+        name: "Dr. Julee Miller DAcCHM, AP, FABORM | Health Pointe Jacksonville",
+        description:
+          "Doctor of Acupuncture and Chinese Medicine, FABORM fertility expert and owner of Health Pointe Jacksonville. Voted Jacksonville FL top ABORM certified holistic fertility specialist.",
+        url: `${SITE_URL}/our-team/dr-julee-miller/`,
+        isPartOf: { "@id": BUSINESS_ID },
+        mainEntity: { "@id": PRACTITIONER_ID },
+        breadcrumb: breadcrumbSchema([
+          { name: "Home", href: "/" },
+          { name: "Our Team", href: "/our-team/" },
+          { name: "Dr. Julee Miller", href: "/our-team/dr-julee-miller/" },
+        ]),
+      },
+      {
+        ...drJuleeMillerEntity,
+        jobTitle: "Doctor of Acupuncture and Chinese Medicine, Owner",
+        description:
+          "Doctor of Acupuncture and Chinese Medicine, FABORM fertility expert and owner of Health Pointe Jacksonville. One of only two board-certified ABORM holistic fertility specialists in Jacksonville, FL with over 20 years of experience.",
+        url: `${SITE_URL}/our-team/dr-julee-miller/`,
+        sameAs: [
+          "https://www.facebook.com/HealthPointeJacksonville",
+          "https://www.instagram.com/healthpointejax",
+        ],
+        knowsAbout: [
+          ...drJuleeMillerEntity.knowsAbout,
+          "Endometriosis",
+          "PCOS",
+          "Infertility treatment",
+          "Pelvic floor acupuncture",
+          "Postpartum care",
+          "Hormone imbalance",
+          "Rheumatoid conditions",
+          "Autoimmune conditions",
+        ],
+      },
+      faqSchema(faqs),
+      localBusinessEntity,
+    ],
+  };
+}
+
+/** Individual staff member profile page (non-doctor) */
+export function staffMemberPageSchema({
+  name,
+  jobTitle,
+  description,
+  slug,
+  imageUrl,
+  knowsAbout = [],
+  faqs = [],
+}: {
+  name: string;
+  jobTitle: string;
+  description: string;
+  slug: string;
+  imageUrl: string;
+  knowsAbout?: string[];
+  faqs?: { question: string; answer: string }[];
+}) {
+  const url = `/our-team/${slug}/`;
+  const graph: object[] = [
+    {
+      "@type": "ProfilePage",
+      "@id": `${SITE_URL}${url}#webpage`,
+      name: `${name} — ${jobTitle} | Health Pointe Jacksonville`,
+      description,
+      url: `${SITE_URL}${url}`,
+      isPartOf: { "@id": BUSINESS_ID },
+      breadcrumb: breadcrumbSchema([
+        { name: "Home", href: "/" },
+        { name: "Our Team", href: "/our-team/" },
+        { name, href: url },
+      ]),
+    },
+    {
+      "@type": "Person",
+      name,
+      jobTitle,
+      description,
+      image: `${SITE_URL}${imageUrl}`,
+      worksFor: { "@id": BUSINESS_ID },
+      url: `${SITE_URL}${url}`,
+      ...(knowsAbout.length > 0 ? { knowsAbout } : {}),
+    },
+    localBusinessEntity,
+  ];
+
+  if (faqs.length > 0) {
+    graph.push(faqSchema(faqs));
+  }
+
+  return { "@context": "https://schema.org", "@graph": graph };
+}
+
 /** Team / practitioner page */
 export function teamPageSchema() {
   const staff = [

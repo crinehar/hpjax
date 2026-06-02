@@ -36,7 +36,7 @@ const otherServicesLinks: NavLink[] = [
 const aboutLinks: NavLink[] = [
   { label: "Meet Our Team", href: "/our-team/", desc: "Board-certified Jacksonville acupuncturists" },
   { label: "Testimonials", href: "/testimonials/", desc: "Patient stories from Jacksonville, FL" },
-  { label: "About Us", href: "/about/", desc: "Our clinic, mission & approach to care" },
+  { label: "Blog", href: "/blog/", desc: "Wellness articles and health tips from our clinic" },
   { label: "Shop Gift Cards", href: "/shop/", desc: "Give the gift of health — gift cards for any service" },
 ];
 
@@ -349,14 +349,6 @@ export default function Header() {
             </div>
 
             <Link
-              href="/blog/"
-              className="px-3 py-2 text-sm font-semibold text-ink hover:text-teal-dark hover:bg-surface rounded-md transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-dark"
-              onClick={() => setOpen(null)}
-            >
-              Blog
-            </Link>
-
-            <Link
               href="/contact/"
               className="px-3 py-2 text-sm font-semibold text-ink hover:text-teal-dark hover:bg-surface rounded-md transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-dark"
               onClick={() => setOpen(null)}
@@ -455,14 +447,6 @@ export default function Header() {
                 onClick={() => setMobileOpen(false)}
               >
                 Massage
-              </Link>
-
-              <Link
-                href="/blog/"
-                className="block px-3 py-2 text-sm font-semibold text-ink hover:text-teal-dark hover:bg-surface rounded-md transition-colors"
-                onClick={() => setMobileOpen(false)}
-              >
-                Blog
               </Link>
 
               <Link

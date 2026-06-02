@@ -14,7 +14,6 @@ const serviceLinks = [
 ];
 
 const quickLinks = [
-  { label: "About", href: "/about" },
   { label: "Our Team", href: "/our-team" },
   { label: "Women's Health", href: "/womens-health" },
   { label: "Testimonials", href: "/testimonials" },

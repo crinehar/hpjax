@@ -20,7 +20,7 @@ export default function HeroSection({
   heading,
   subheading,
   ctaLabel = "Book Your Appointment",
-  ctaHref = "/book",
+  ctaHref = "https://healthpointejacksonville.acubliss.app/portal/booking/",
   secondaryCtaLabel,
   secondaryCtaHref,
   imageSrc,
@@ -69,9 +69,15 @@ export default function HeroSection({
             {subheading}
           </p>
           <div className="flex flex-wrap gap-4">
-            <Link href={ctaHref} className="btn-primary text-base px-8 py-4">
+            <a
+              href={ctaHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${ctaLabel} (opens in new tab)`}
+              className="btn-primary text-base px-8 py-4"
+            >
               {ctaLabel}
-            </Link>
+            </a>
             {secondaryCtaLabel && secondaryCtaHref && (
               <Link
                 href={secondaryCtaHref}

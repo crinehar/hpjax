@@ -146,9 +146,9 @@ export default function ContactPage() {
                 </dl>
 
                 <div className="mt-8 flex flex-col gap-3">
-                  <Link href="/book" className="btn-primary text-center">
+                  <a href="https://healthpointejacksonville.acubliss.app/portal/booking/" target="_blank" rel="noopener noreferrer" aria-label="Book an Appointment (opens in new tab)" className="btn-primary text-center">
                     Book an Appointment
-                  </Link>
+                  </a>
                   <a href="tel:9044480046" className="btn-secondary text-center">
                     (904) 448-0046
                   </a>

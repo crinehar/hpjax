@@ -78,13 +78,15 @@ export default function TopBanner() {
               >
                 <Search className="w-4 h-4" />
               </button>
-              <Link
-                href="/book"
+              <a
+                href="https://healthpointejacksonville.acubliss.app/portal/booking/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-white/80 hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white rounded-sm"
-                aria-label="Book appointment"
+                aria-label="Book appointment (opens in new tab)"
               >
                 <User className="w-4 h-4" />
-              </Link>
+              </a>
             </div>
 
             {/* Divider */}

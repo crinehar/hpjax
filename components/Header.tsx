@@ -356,9 +356,16 @@ export default function Header() {
               Contact
             </Link>
 
-            <Link href="/book/" className="btn-primary ml-3" onClick={() => setOpen(null)}>
+            <a
+              href="https://healthpointejacksonville.acubliss.app/portal/booking/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Book Now (opens in new tab)"
+              className="btn-primary ml-3"
+              onClick={() => setOpen(null)}
+            >
               Book Now
-            </Link>
+            </a>
           </nav>
 
           {/* Mobile hamburger */}
@@ -458,13 +465,16 @@ export default function Header() {
               </Link>
 
               <div className="pt-2">
-                <Link
-                  href="/book/"
+                <a
+                  href="https://healthpointejacksonville.acubliss.app/portal/booking/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Book Now (opens in new tab)"
                   className="btn-primary w-full justify-center"
                   onClick={() => setMobileOpen(false)}
                 >
                   Book Now
-                </Link>
+                </a>
               </div>
             </nav>
           </motion.div>

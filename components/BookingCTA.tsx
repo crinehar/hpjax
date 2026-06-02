@@ -31,12 +31,15 @@ export default function BookingCTA({
           </h2>
           <p className="text-lg text-gray-200 leading-relaxed mb-8 max-w-2xl mx-auto">{body}</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/book"
+            <a
+              href="https://healthpointejacksonville.acubliss.app/portal/booking/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${ctaLabel} (opens in new tab)`}
               className="inline-flex items-center justify-center gap-2 bg-primary text-ink font-body font-bold text-base px-8 py-4 rounded-md transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
             >
               {ctaLabel}
-            </Link>
+            </a>
             <a
               href="tel:9044480046"
               className="inline-flex items-center justify-center gap-2 border-2 border-white text-white hover:bg-white/10 font-body font-bold text-base px-8 py-4 rounded-md transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"

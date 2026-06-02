@@ -135,12 +135,15 @@ export default function OurTeamPage() {
                 O3 Regenerative Therapy uses ozone to stimulate the body&apos;s immune system, promoting healing and protection from future illnesses. For an extra boost, our nutrient injections support energy, memory, and weight loss efforts—perfect for those feeling fatigued or struggling with mental clarity.
               </p>
             </div>
-            <Link
-              href="/book"
+            <a
+              href="https://healthpointejacksonville.acubliss.app/portal/booking/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Book Your Session Now (opens in new tab)"
               className="inline-flex items-center justify-center gap-2 bg-teal-dark text-white font-body font-semibold text-sm px-6 py-3 rounded-md transition-all duration-200 hover:bg-teal hover:-translate-y-0.5 hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-dark mb-14"
             >
               Book Your Session Now
-            </Link>
+            </a>
           </ScrollReveal>
         </div>
         {/* Team photo — capped at native width to avoid upscale blur */}

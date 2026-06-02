@@ -127,9 +127,9 @@ export default function YairaPage() {
                 Yaira joins our team with over twenty years of experience as a licensed massage therapist! Her massage therapy journey began at the Heritage Institute in Jacksonville, FL, where she completed her massage education and graduated in 2003. Yaira&apos;s professional path includes a wide range of massage environments, ranging from chiropractic offices to spa settings.
               </p>
               <div className="flex flex-wrap gap-3">
-                <Link href="/book" className="btn-primary">
+                <a href="https://healthpointejacksonville.acubliss.app/portal/booking/" target="_blank" rel="noopener noreferrer" aria-label="Schedule an Appointment (opens in new tab)" className="btn-primary">
                   Schedule an Appointment
-                </Link>
+                </a>
                 <a href="tel:9044480046" className="btn-secondary">
                   (904) 448-0046
                 </a>

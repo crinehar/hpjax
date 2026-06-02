@@ -130,9 +130,9 @@ export default function DenisePage() {
                 Meet Denise, a seasoned and compassionate licensed massage therapist with a remarkable 30 years of experience in the field. Her true passion lies in helping others lead pain-free lives, and her expertise has made her shine in the world of wellness.
               </p>
               <div className="flex flex-wrap gap-3">
-                <Link href="/book" className="btn-primary">
+                <a href="https://healthpointejacksonville.acubliss.app/portal/booking/" target="_blank" rel="noopener noreferrer" aria-label="Schedule an Appointment (opens in new tab)" className="btn-primary">
                   Schedule an Appointment
-                </Link>
+                </a>
                 <a href="tel:9044480046" className="btn-secondary">
                   (904) 448-0046
                 </a>

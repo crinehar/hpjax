@@ -134,9 +134,9 @@ export default function DrJuleeMillerPage() {
                 Doctor of Acupuncture and Chinese Medicine, FABORM fertility expert and owner of Health Pointe Jacksonville, Dr. Julee Miller specializes in treating Women&apos;s Health &amp; Infertility, pelvic floor dysfunction, chronic pain and other chronic difficult to treat medical issues in Jacksonville, FL.
               </p>
               <div className="flex flex-wrap gap-3">
-                <Link href="/book" className="btn-primary">
+                <a href="https://healthpointejacksonville.acubliss.app/portal/booking/" target="_blank" rel="noopener noreferrer" aria-label="Schedule an Appointment (opens in new tab)" className="btn-primary">
                   Schedule an Appointment
-                </Link>
+                </a>
                 <a href="tel:9044480046" className="btn-secondary">
                   (904) 448-0046
                 </a>

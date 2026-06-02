@@ -9,6 +9,17 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      // /book — redirect to AcuBliss booking portal
+      {
+        source: "/book",
+        destination: "https://healthpointejacksonville.acubliss.app/portal/booking/",
+        permanent: false,
+      },
+      {
+        source: "/book/",
+        destination: "https://healthpointejacksonville.acubliss.app/portal/booking/",
+        permanent: false,
+      },
       // Dr. Julee Miller profile — old WP slug
       {
         source: "/about-acupuncture-physician",

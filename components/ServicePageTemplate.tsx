@@ -37,7 +37,7 @@ export default function ServicePageTemplate({
         heading={title}
         subheading={tagline}
         ctaLabel="Book a Consultation"
-        ctaHref="/book"
+        ctaHref="https://healthpointejacksonville.acubliss.app/portal/booking/"
         secondaryCtaLabel="View All Services"
         secondaryCtaHref="/#services-heading"
       />

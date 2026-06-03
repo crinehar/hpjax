@@ -132,6 +132,7 @@ These are the baseline scores to maintain before go-live. Do not merge PRs that 
 ## 🚀 Pre-Launch Checklist — Must Complete Before Go-Live
 
 ### Shopify
+- [ ] **Re-create Shopify store under client's email** — current store is under developer email, needs to be owned by client
 - [ ] Upgrade Shopify dev store to **Basic plan ($29/mo)** — removes password gate, enables live checkout
 - [ ] Enable remaining gift card variants in Shopify admin (confirm all $25/$50/$100 are `availableForSale`)
 - [ ] Add remaining gift card products from WooCommerce store into Shopify (50 Min Massage GC, etc.)
@@ -139,6 +140,13 @@ These are the baseline scores to maintain before go-live. Do not merge PRs that 
 - [ ] Set up Shopify Payments or Stripe as payment processor
 - [ ] Configure gift card email delivery template in Shopify admin
 - [ ] Remove Shopify demo products (snowboards, ski wax) — only gift cards should be in the store
+
+### Vercel
+- [ ] **Upgrade to Vercel Pro** — required for production deployment with custom domain, team features, and SLA
+- [ ] Transfer project to client's Vercel account or add client as owner
+
+### GitHub
+- [ ] **Make repository private** — currently public, should be private before go-live
 
 ### Vercel Environment Variables
 - [ ] Confirm `NEXT_PUBLIC_SHOPIFY_DOMAIN` and `NEXT_PUBLIC_SHOPIFY_STOREFRONT_TOKEN` are set for **Production + Preview + Development**

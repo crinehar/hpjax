@@ -52,7 +52,7 @@
   }
 
   .section-heading {
-    @apply text-3xl md:text-4xl font-heading font-bold text-ink mb-4;
+    @apply text-3xl md:text-4xl font-heading font-bold text-ink mb-4 text-center;
   }
 
   .section-subheading {

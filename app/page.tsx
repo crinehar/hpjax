@@ -441,7 +441,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal className="flex items-end justify-between mb-10">
             <div>
-              <h2 id="blog-heading" className="section-heading mb-1">From the blog</h2>
+              <h2 id="blog-heading" className="section-heading mb-1 text-left">From the blog</h2>
               <p className="text-ink-muted text-sm">Acupuncture insights from Dr. Julee Miller &amp; the Health Pointe Jacksonville team</p>
             </div>
             <Link href="/blog/" className="text-teal-dark font-semibold text-sm hover:underline hidden sm:block flex-shrink-0">

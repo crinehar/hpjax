@@ -51,7 +51,7 @@ export default function ContactPage() {
       />
 
       {/* ── Hero ────────────────────────────────────────────────────────────── */}
-      <header aria-labelledby="contact-heading" className="relative h-72 md:h-96 flex items-center justify-center overflow-hidden">
+      <header aria-labelledby="contact-heading" className="relative h-64 md:h-80 flex items-center justify-center overflow-hidden">
         <Image
           src="/images/contact-health-pointe-jacksonville-acupuncture-massage.jpg"
           alt="Health Pointe Jacksonville acupuncture and massage treatment room"

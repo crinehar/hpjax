@@ -80,7 +80,7 @@ export default function OurTeamPage() {
       />
 
       {/* ── Hero ─────────────────────────────────────────────────────────────── */}
-      <header className="relative h-72 md:h-96 flex items-center justify-center overflow-hidden">
+      <header className="relative h-64 md:h-80 flex items-center justify-center overflow-hidden">
         <Image
           src="/images/team/health-pointe-jacksonville-acupuncture-team.jpg"
           alt="The Health Pointe Jacksonville acupuncture and wellness team outside their clinic at 3840 Belfort Rd, Jacksonville, FL"

@@ -4,6 +4,20 @@ import type { Review } from "./reviews";
 // 129 reviews imported from WordPress export
 export const REVIEWS_DATA: Review[] = [
   {
+    slug: "sarah-t",
+    name: "Sarah T",
+    quote: "I had been struggling with chronic knee pain for years, and nothing seemed to provide lasting relief. After trying O3 Regenerative Therapy with Dr. Miller, I was amazed at the results. Within a few weeks, my pain significantly decreased, and I regained mobility I hadn't felt in years. The process was smooth, and Dr. Miller took the time to explain everything, making me feel confident in my treatment plan. I highly recommend this therapy to anyone looking for a natural approach to healing!",
+    date: "2025-04-02",
+    categories: ["O3 Regenerative Therapy"],
+  },
+  {
+    slug: "ashley-r",
+    name: "Ashley R",
+    quote: "I was amazed by the results of my cosmetic acupuncture treatments! My skin looks firmer, my fine lines have softened, and I have a natural, healthy glow. Not only did I see visible improvements in my complexion, but I also felt more relaxed and energized overall. This treatment is truly a game-changer for both beauty and well-being!",
+    date: "2025-04-02",
+    categories: ["Cosmetic Acupuncture"],
+  },
+  {
     slug: "teresa-e",
     name: "Teresa E",
     quote: "Dr. Miller has had a profound impact on my health and well-being that I was not able to get with any type of western medicine. After being denied for two surgeries I turned to Dr. Miller. My trigeminal neuralgia has been significantly reduced along with the amount of prescription drugs I was taking to dull the pain, especially through the winter months. I am also able to sleep better. I can’t say enough about her practice and the staff!",

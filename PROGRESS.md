@@ -1,7 +1,8 @@
 # Health Pointe Jacksonville — Rebuild Progress
 
 ## Status: In Progress
-**Last updated:** 2026-06-02
+**Last updated:** 2026-06-03 (end of session)
+**WP Sitemap:** https://hpjax.com/page-sitemap.xml (audited 2026-06-03)
 
 ### Lighthouse Benchmark Scores (2026-05-22 — hpjax.vercel.app)
 | Category | Score |
@@ -47,10 +48,18 @@ These are the baseline scores to maintain before go-live. Do not merge PRs that 
 | `/services/pediatric-acupuncture` | ✅ Scaffolded | Full conditions list + what to expect |
 | `/services/quit-smoking-program-jacksonville` | ✅ Scaffolded | Full conditions list + what to expect |
 | `/long-covid-syndrome` | ✅ Scaffolded | Full conditions list + what to expect |
-| `/services/cosmetic-facial-acupuncture` | ✅ Scaffolded | Full conditions list + what to expect |
-| `/services/o3-regenerative-therapy` | ✅ Scaffolded | Full conditions list + what to expect |
-| `/services/acupuncture-point-injection-therapy` | ✅ Scaffolded | Full conditions list + what to expect |
-| `/services/b12-injections` | ✅ Scaffolded | Full conditions list + what to expect |
+| `/services/cosmetic-facial-acupuncture` | ✅ Complete | Full rebuild — hero, benefits grid, approach, image band, FAQ, reviews carousel, ADA/SEO/AIO audited |
+| `/services/o3-regenerative-therapy` | ✅ Complete | Full rebuild — hero, accordion, conditions grid, consultation, image grid, FAQ (ol), reviews, ADA/SEO/AIO audited |
+| `/services/acupuncture-point-injection-therapy` | ✅ Complete | Full rebuild — hero, conditions grid, how it works, biopuncture products grid, image band, FAQ, reviews, ADA/SEO/AIO audited |
+| `/services/b12-injections` | ✅ Complete | Full rebuild — hero, intro, benefits grid, fat burning section, ingredients grid, image band, FAQ, aftercare, FDA disclaimer, ADA/SEO/AIO audited |
+| `/dry-needling-jacksonville-fl` | ❌ Missing | In WP sitemap — needs full build |
+| `/get-pregnant-faster` | ❌ Missing | In WP sitemap — confirm if needed (landing page?) |
+| `/pathway-to-pregancy` | ❌ Missing | In WP sitemap — confirm if needed (landing page, note WP typo) |
+| `/pelvic-floor-health-quiz` | ❌ Missing | In WP sitemap — quiz page, needs discussion |
+| `/free-pain-screening-quiz` | ❌ Missing | In WP sitemap — quiz page, needs discussion |
+| `/health-pointe-jax-careers` | ❌ Missing | In WP sitemap — careers page + 3 sub-pages |
+| `/services` | ❌ Missing | In WP sitemap — services index page |
+| `/accessibility-statement` | ⚠️ URL mismatch | WP uses `/accessibility-statement/`, we have `/accessibility/` — needs redirect or rename |
 
 ---
 
@@ -166,11 +175,50 @@ These are the baseline scores to maintain before go-live. Do not merge PRs that 
 
 ## 🎯 Next Session Priorities
 
-1. **Service pages** — rebuild remaining scaffolded service pages with full WP copy (acupuncture, fertility, pelvic floor, etc.) using the massage page as the template
+1. **Women's Health pages** — `/womens-health`, `/services/fertility-acupuncture-jacksonville-fl-aborm-certified-dr-julee-miller`, `/pelvic-floor` full rebuilds with WP copy, images, ADA/AIO
 2. **Analytics** — wire GA4 + FB Pixel once IDs are provided
 3. **Shopify upgrade** — test full checkout end-to-end on paid plan
 4. **WordPress redirects** — map any remaining old WP URLs before DNS cutover
 5. **Live chat** — add floating chat widget embed code
+
+---
+
+## 📧 Client Follow-Up Email — Pending
+
+Send follow-up email summarizing key improvements over the live WordPress site. Include:
+
+### Performance & Technical
+- Next.js 14 SSG — pages served as static HTML (no PHP/WordPress overhead)
+- Target PageSpeed 100/100/100/100 vs current WP scores
+- Sub-100KB first-load JS bundle
+- All images converted to next/image with lazy loading, explicit dimensions, priority prop on heroes
+- No render-blocking scripts — all third-party JS deferred
+
+### SEO Image Renaming
+All images renamed from generic/hash filenames to descriptive kebab-case SEO filenames. Examples:
+- `shutterstock_617618081-scaled-1.jpg` → `b12-nutrition-metabolism-jacksonville-fl.jpg`
+- `AcupuncturePointInjectionTherapy.webp` → `acupuncture-point-injection-therapy-jacksonville-fl.webp`
+- `rsw_1200h_600cg_true.webp` → `o3-ozone-therapy-jacksonville-fl.webp`
+- `cosmeticacu.jpg` → `cosmetic-facial-acupuncture-treatment-jacksonville-fl.jpg`
+- (all service, team, and hero images renamed similarly)
+
+### ADA / WCAG 2.2 AA
+- Native semantic HTML — no accessibility overlay widget
+- Skip-to-content link, proper landmark regions on every page
+- One H1 per page, logical heading hierarchy enforced
+- All images have descriptive alt text; decorative images use `alt=""`
+- All external links include `aria-label` with "(opens in new tab)"
+- Visible focus rings on all interactive elements
+- ARIA live regions on dynamic content (testimonial carousel)
+- `<details>`/`<summary>` for accordions — keyboard accessible, no JS required
+
+### AIO / LLM Readability
+- Clean SSG HTML with low rendered content percentage
+- JSON-LD schema on every page: MedicalWebPage, Service, FAQPage, BreadcrumbList, LocalBusiness, Person
+- Service pages include `hasOfferCatalog` listing all treatment offerings
+- FAQ sections with question-framed headings on every service page
+- NAP (name, address, phone) as plain HTML in every page footer
+- `llms.txt` in /public
 
 ---
 

@@ -120,7 +120,7 @@ export default function MassageTherapyPage() {
       />
 
       {/* ── Hero ────────────────────────────────────────────────────────────── */}
-      <header aria-labelledby="page-heading" className="relative h-80 md:h-[480px] flex items-center overflow-hidden">
+      <header aria-labelledby="page-heading" className="relative h-64 md:h-80 flex items-center justify-center overflow-hidden">
         <Image
           src="/images/massage-therapy-jacksonville-fl-health-pointe.jpg"
           alt="Licensed massage therapist performing therapeutic massage at Health Pointe Jacksonville"
@@ -130,27 +130,25 @@ export default function MassageTherapyPage() {
           className="object-cover object-center"
         />
         <div className="absolute inset-0 bg-ink/60" aria-hidden="true" />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="max-w-2xl">
-            <h1
-              id="page-heading"
-              className="font-heading font-bold text-white text-4xl md:text-5xl leading-tight mb-6"
-            >
-              Voted Jacksonville FL&apos;s top massage therapy clinic (again!)
-            </h1>
-            <p className="text-white text-lg leading-relaxed mb-8">
-              Looking for more relaxation and less pain? What if you could also finally alleviate your back pain, chronic headaches, TMJ jaw pain, carpal tunnel wrist pain, recover from a recent sports injury or auto accident?
-              <br /><br />
-              Medical Massage at Health Pointe Jacksonville is here to help!
-            </p>
-          </div>
+        <div className="relative z-10 text-center px-4 max-w-3xl mx-auto">
+          <h1
+            id="page-heading"
+            className="font-heading font-bold text-white text-4xl md:text-5xl leading-tight mb-6"
+          >
+            Voted Jacksonville FL&apos;s top massage therapy clinic (again!)
+          </h1>
+          <p className="text-white text-lg leading-relaxed">
+            Looking for more relaxation and less pain? What if you could also finally alleviate your back pain, chronic headaches, TMJ jaw pain, carpal tunnel wrist pain, recover from a recent sports injury or auto accident?
+            <br /><br />
+            Medical Massage at Health Pointe Jacksonville is here to help!
+          </p>
         </div>
       </header>
 
       {/* ── Redefining Self Care ─────────────────────────────────────────────── */}
       <section aria-labelledby="intro-heading" className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <ScrollReveal className="text-center mb-10">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <ScrollReveal className="mb-10">
             <h2 id="intro-heading" className="section-heading">
               Redefining Self Care with Medical Massage Therapy in Jacksonville, FL
             </h2>

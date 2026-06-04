@@ -218,7 +218,7 @@ export default function FertilityAcupuncturePage() {
 
           <ScrollReveal className="text-center mt-10">
             <a
-              href="/fertility-quiz"
+              href="/get-pregnant-faster"
               className="btn-primary"
             >
               Take Our Fertility Quiz

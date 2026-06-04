@@ -55,10 +55,10 @@ These are the baseline scores to maintain before go-live. Do not merge PRs that 
 | `/services/b12-injections` | ✅ Complete | Full rebuild — hero, intro, benefits grid, fat burning section, ingredients grid, image band, FAQ, aftercare, FDA disclaimer, ADA/SEO/AIO audited |
 | `/services` | ✅ Complete | New page — 4 sections (Women's Health, Acupuncture, Massage, Additional), service cards with ABORM badge, ItemList schema, ADA/SEO/AIO audited |
 | `/health-pointe-jax-careers` | ✅ Complete | New page — mission, 5 core values, 3 job listings, gradient CTA, WP copy verbatim, added to footer quick links |
-| `/get-pregnant-faster` | ❌ Missing | In WP sitemap — confirm if needed (landing page?) |
+| `/get-pregnant-faster` | ✅ Complete | Fertility quiz — hero, intro, 11 Yes/No questions + first/last/email, Formspree stub, CC list ID noted for go-live |
+| `/free-pain-screening-quiz` | ✅ Complete | Pain screening quiz — hero, intro, 10 dropdown fields + first/last/email, Formspree stub, CC list ID noted for go-live |
+| `/pelvic-floor-health-quiz` | ✅ Complete | Pelvic floor quiz — hero, intro, 12 Yes/No + live score counter + first/last/email, Formspree stub, CC list ID TBD |
 | `/pathway-to-pregancy` | ✅ N/A | Does not exist — removed from scope |
-| `/pelvic-floor-health-quiz` | ❌ Missing | In WP sitemap — quiz page, needs discussion |
-| `/free-pain-screening-quiz` | ❌ Missing | In WP sitemap — quiz page, needs discussion (linked from /services/chronic-pain/) |
 | `/accessibility-statement` | ⚠️ URL mismatch | WP uses `/accessibility-statement/`, we have `/accessibility/` — needs redirect or rename |
 
 ---
@@ -132,7 +132,8 @@ These are the baseline scores to maintain before go-live. Do not merge PRs that 
 | **WordPress blog** | `app/blog/page.tsx` + `app/blog/[slug]/page.tsx` | `WORDPRESS_API_URL` |
 | **Resend contact form** | Create `app/actions/contact.ts` server action | `RESEND_API_KEY` |
 | **Mailchimp newsletter** | `components/NewsletterForm.tsx` | `MAILCHIMP_API_KEY`, `MAILCHIMP_AUDIENCE_ID`, `MAILCHIMP_SERVER_PREFIX` |
-| **Constant Contact quiz drip campaigns** | Build `/free-pain-screening-quiz`, `/pelvic-floor-health-quiz`, `/fertility-quiz` landing pages — server action + CC list integration | ✅ Tokens obtained — add to Vercel env vars |
+| **Constant Contact quiz drip campaigns** | Wire CC list adds to all 3 quiz forms when campaigns are ready — list IDs in `app/actions/pain-quiz.ts` and fertility notes | ✅ Tokens in Vercel — wire at go-live |
+| **Formspree quiz forms** | Add `NEXT_PUBLIC_FORMSPREE_*_QUIZ_ID` env vars to Vercel for all 3 quizzes | 3 vars stubbed in `.env.local.example` |
 
 ---
 
@@ -190,8 +191,9 @@ These are the baseline scores to maintain before go-live. Do not merge PRs that 
 
 ## 🎯 Next Session Priorities
 
-1. **Quiz landing pages** — `/free-pain-screening-quiz` (linked from chronic pain page), `/pelvic-floor-health-quiz`, `/fertility-quiz` with Mailchimp drip
-2. **Remaining missing pages** — `/get-pregnant-faster`, `/accessibility-statement` redirect
+1. **CC campaign wiring** — connect all 3 quizzes to CC lists when campaigns are ready (list IDs saved in server action files)
+2. **Formspree setup** — client creates 3 Formspree forms at go-live, add IDs to Vercel env vars
+3. **Remaining missing pages** — `/accessibility-statement` redirect
 3. **Analytics** — wire GA4 + FB Pixel once IDs are provided
 4. **Shopify upgrade** — test full checkout end-to-end on paid plan
 5. **Live chat** — add floating chat widget embed code

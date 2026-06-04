@@ -1,7 +1,7 @@
 # Health Pointe Jacksonville — Rebuild Progress
 
 ## Status: In Progress
-**Last updated:** 2026-06-03 (end of session)
+**Last updated:** 2026-06-03 (evening session)
 **WP Sitemap:** https://hpjax.com/page-sitemap.xml (audited 2026-06-03)
 
 ### Lighthouse Benchmark Scores (2026-05-22 — hpjax.vercel.app)
@@ -37,10 +37,11 @@ These are the baseline scores to maintain before go-live. Do not merge PRs that 
 | `/shop/[handle]` | ✅ Live | Product detail — variant selector, qty, buy → new tab checkout |
 | `/blog` | ✅ Scaffolded | Static 125 WP posts — **needs WordPress REST API for live data** |
 | `/blog/[slug]` | ✅ Scaffolded | Dynamic route with static params |
-| `/womens-health` | ✅ Scaffolded | Service grid for women's health |
+| `/womens-health` | ✅ Complete | Full rebuild — hero, intro, What We Treat, service cards (fertility/pelvic/dry needling), natural approach, CTA, FAQ schema, ADA/SEO/AIO audited |
 | `/services/massage-therapy-jacksonville` | ✅ Complete | Full rebuild — hero, 7 sections, image grid, FAQ, reviews carousel, ADA/SEO/AIO audited |
-| `/services/fertility-acupuncture-jacksonville-fl-aborm-certified-dr-julee-miller` | ✅ Scaffolded | Full conditions list + what to expect |
-| `/services/pelvic-floor` | ✅ Scaffolded | Full conditions list + what to expect |
+| `/services/fertility-acupuncture-jacksonville-fl-aborm-certified-dr-julee-miller` | ✅ Complete | Full rebuild — hero, 8 sections, 3 image cards, IVF stats, reviews, fertility quiz CTA, ADA/SEO/AIO audited |
+| `/services/pelvic-floor` | ✅ Complete | Full rebuild (moved from /pelvic-floor/, 301 redirect added) — hero, who should seek, comprehensive care bg image, CTA band, reviews, ADA/SEO/AIO audited |
+| `/services/dry-needling-jacksonville-fl` | ✅ Complete | New page (301 redirect from /dry-needling-jacksonville-fl/) — hero, 8 sections, conditions grid, team bg image, comparison, ADA/SEO/AIO audited |
 | `/services/acupuncture` | ✅ Scaffolded | Full conditions list + what to expect |
 | `/chronic-pain` | ✅ Scaffolded | Full conditions list + what to expect |
 | `/neurological-disorders` | ✅ Scaffolded | Full conditions list + what to expect |
@@ -52,7 +53,6 @@ These are the baseline scores to maintain before go-live. Do not merge PRs that 
 | `/services/o3-regenerative-therapy` | ✅ Complete | Full rebuild — hero, accordion, conditions grid, consultation, image grid, FAQ (ol), reviews, ADA/SEO/AIO audited |
 | `/services/acupuncture-point-injection-therapy` | ✅ Complete | Full rebuild — hero, conditions grid, how it works, biopuncture products grid, image band, FAQ, reviews, ADA/SEO/AIO audited |
 | `/services/b12-injections` | ✅ Complete | Full rebuild — hero, intro, benefits grid, fat burning section, ingredients grid, image band, FAQ, aftercare, FDA disclaimer, ADA/SEO/AIO audited |
-| `/dry-needling-jacksonville-fl` | ❌ Missing | In WP sitemap — needs full build |
 | `/get-pregnant-faster` | ❌ Missing | In WP sitemap — confirm if needed (landing page?) |
 | `/pathway-to-pregancy` | ❌ Missing | In WP sitemap — confirm if needed (landing page, note WP typo) |
 | `/pelvic-floor-health-quiz` | ❌ Missing | In WP sitemap — quiz page, needs discussion |
@@ -126,6 +126,8 @@ These are the baseline scores to maintain before go-live. Do not merge PRs that 
 | **WordPress blog** | `app/blog/page.tsx` + `app/blog/[slug]/page.tsx` | `WORDPRESS_API_URL` |
 | **Resend contact form** | Create `app/actions/contact.ts` server action | `RESEND_API_KEY` |
 | **Mailchimp newsletter** | `components/NewsletterForm.tsx` | `MAILCHIMP_API_KEY`, `MAILCHIMP_AUDIENCE_ID`, `MAILCHIMP_SERVER_PREFIX` |
+| **Mailchimp fertility quiz drip campaign** | Build `/fertility-quiz` landing page + form → Mailchimp drip sequence | `MAILCHIMP_API_KEY`, `MAILCHIMP_AUDIENCE_ID`, `MAILCHIMP_SERVER_PREFIX` |
+| **Mailchimp pelvic health quiz drip campaign** | Build `/pelvic-health-quiz` landing page + form → Mailchimp drip sequence | `MAILCHIMP_API_KEY`, `MAILCHIMP_AUDIENCE_ID`, `MAILCHIMP_SERVER_PREFIX` |
 
 ---
 
@@ -183,11 +185,12 @@ These are the baseline scores to maintain before go-live. Do not merge PRs that 
 
 ## 🎯 Next Session Priorities
 
-1. **Women's Health pages** — `/womens-health`, `/services/fertility-acupuncture-jacksonville-fl-aborm-certified-dr-julee-miller`, `/pelvic-floor` full rebuilds with WP copy, images, ADA/AIO
-2. **Analytics** — wire GA4 + FB Pixel once IDs are provided
-3. **Shopify upgrade** — test full checkout end-to-end on paid plan
-4. **WordPress redirects** — map any remaining old WP URLs before DNS cutover
-5. **Live chat** — add floating chat widget embed code
+1. **Quiz landing pages** — `/fertility-quiz` and `/pelvic-health-quiz` with Mailchimp drip integration
+2. **Remaining scaffolded service pages** — full rebuilds with WP copy: `/services/acupuncture`, `/services/sports-acupuncture`, `/services/pediatric-acupuncture`, `/services/quit-smoking-program-jacksonville`, `/chronic-pain`, `/neurological-disorders`, `/long-covid-syndrome`
+3. **Missing pages** — `/services` index, `/health-pointe-jax-careers`, `/accessibility-statement` (redirect from `/accessibility/`)
+4. **Analytics** — wire GA4 + FB Pixel once IDs are provided
+5. **Shopify upgrade** — test full checkout end-to-end on paid plan
+6. **Live chat** — add floating chat widget embed code
 
 ---
 

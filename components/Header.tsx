@@ -13,7 +13,8 @@ type NavLink = { label: string; href: string; desc?: string };
 const womensHealthLinks: NavLink[] = [
   { label: "Women's Health Overview", href: "/womens-health/", desc: "Integrative care for women in Jacksonville, FL" },
   { label: "Fertility Programs", href: "/services/fertility-acupuncture-jacksonville-fl-aborm-certified-dr-julee-miller/", desc: "ABORM-certified fertility acupuncture, Jacksonville FL" },
-  { label: "Pelvic Floor", href: "/pelvic-floor/", desc: "Pelvic pain, bladder issues & postpartum care" },
+  { label: "Pelvic Floor", href: "/services/pelvic-floor/", desc: "Pelvic pain, bladder issues & postpartum care" },
+  { label: "Dry Needling", href: "/services/dry-needling-jacksonville-fl/", desc: "Targeted muscle relief and women's health support" },
 ];
 
 const acupunctureLinks: NavLink[] = [

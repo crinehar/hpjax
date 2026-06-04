@@ -59,6 +59,12 @@ const nextConfig = {
       // Angel — old WP slug
       { source: "/angel", destination: "/our-team/angel", permanent: true },
       { source: "/angel/", destination: "/our-team/angel", permanent: true },
+      // Dry needling — nested under /services/
+      { source: "/dry-needling-jacksonville-fl", destination: "/services/dry-needling-jacksonville-fl", permanent: true },
+      { source: "/dry-needling-jacksonville-fl/", destination: "/services/dry-needling-jacksonville-fl/", permanent: true },
+      // Pelvic floor — moved from /pelvic-floor/ to /services/pelvic-floor/
+      { source: "/pelvic-floor", destination: "/services/pelvic-floor", permanent: true },
+      { source: "/pelvic-floor/", destination: "/services/pelvic-floor/", permanent: true },
       // Blog posts — WP had no /blog/ prefix, new site does
       ...blogRedirects,
     ];

@@ -312,16 +312,16 @@ export default function WomensHealthPage() {
               Women&apos;s Health Acupuncture — Frequently Asked Questions
             </h2>
           </ScrollReveal>
-          <dl className="space-y-6">
-            {faqs.map(({ question, answer }) => (
-              <ScrollReveal key={question}>
-                <div className="border border-surface-muted rounded-2xl p-6 bg-surface">
+          <ScrollReveal>
+            <dl className="space-y-6">
+              {faqs.map(({ question, answer }) => (
+                <div key={question} className="border border-surface-muted rounded-2xl p-6 bg-surface">
                   <dt className="font-heading font-semibold text-ink text-lg mb-3">{question}</dt>
                   <dd className="text-ink-muted leading-relaxed">{answer}</dd>
                 </div>
-              </ScrollReveal>
-            ))}
-          </dl>
+              ))}
+            </dl>
+          </ScrollReveal>
         </div>
       </section>
 

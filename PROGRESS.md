@@ -1,7 +1,7 @@
 # Health Pointe Jacksonville — Rebuild Progress
 
 ## Status: In Progress
-**Last updated:** 2026-06-04 (full review session)
+**Last updated:** 2026-06-04
 **WP Sitemap:** https://hpjax.com/page-sitemap.xml (audited 2026-06-03)
 
 ### Lighthouse Benchmark Scores (2026-05-22 — hpjax.vercel.app)
@@ -56,7 +56,7 @@ These are the baseline scores to maintain before go-live. Do not merge PRs that 
 | `/services` | ✅ Complete | New page — 4 sections (Women's Health, Acupuncture, Massage, Additional), service cards with ABORM badge, ItemList schema, ADA/SEO/AIO audited |
 | `/health-pointe-jax-careers` | ✅ Complete | New page — mission, 5 core values, 3 job listings, gradient CTA, WP copy verbatim, added to footer quick links |
 | `/get-pregnant-faster` | ❌ Missing | In WP sitemap — confirm if needed (landing page?) |
-| `/pathway-to-pregancy` | ❌ Missing | In WP sitemap — confirm if needed (landing page, note WP typo) |
+| `/pathway-to-pregancy` | ✅ N/A | Does not exist — removed from scope |
 | `/pelvic-floor-health-quiz` | ❌ Missing | In WP sitemap — quiz page, needs discussion |
 | `/free-pain-screening-quiz` | ❌ Missing | In WP sitemap — quiz page, needs discussion (linked from /services/chronic-pain/) |
 | `/accessibility-statement` | ⚠️ URL mismatch | WP uses `/accessibility-statement/`, we have `/accessibility/` — needs redirect or rename |
@@ -132,8 +132,7 @@ These are the baseline scores to maintain before go-live. Do not merge PRs that 
 | **WordPress blog** | `app/blog/page.tsx` + `app/blog/[slug]/page.tsx` | `WORDPRESS_API_URL` |
 | **Resend contact form** | Create `app/actions/contact.ts` server action | `RESEND_API_KEY` |
 | **Mailchimp newsletter** | `components/NewsletterForm.tsx` | `MAILCHIMP_API_KEY`, `MAILCHIMP_AUDIENCE_ID`, `MAILCHIMP_SERVER_PREFIX` |
-| **Mailchimp fertility quiz drip campaign** | Build `/fertility-quiz` landing page + form → Mailchimp drip sequence | `MAILCHIMP_API_KEY`, `MAILCHIMP_AUDIENCE_ID`, `MAILCHIMP_SERVER_PREFIX` |
-| **Mailchimp pelvic health quiz drip campaign** | Build `/pelvic-health-quiz` landing page + form → Mailchimp drip sequence | `MAILCHIMP_API_KEY`, `MAILCHIMP_AUDIENCE_ID`, `MAILCHIMP_SERVER_PREFIX` |
+| **Constant Contact quiz drip campaigns** | Build `/free-pain-screening-quiz`, `/pelvic-floor-health-quiz`, `/fertility-quiz` landing pages — server action + CC list integration | ✅ Tokens obtained — add to Vercel env vars |
 
 ---
 
@@ -192,11 +191,10 @@ These are the baseline scores to maintain before go-live. Do not merge PRs that 
 ## 🎯 Next Session Priorities
 
 1. **Quiz landing pages** — `/free-pain-screening-quiz` (linked from chronic pain page), `/pelvic-floor-health-quiz`, `/fertility-quiz` with Mailchimp drip
-2. **Remaining missing pages** — `/get-pregnant-faster`, `/pathway-to-pregnancy`, `/accessibility-statement` redirect
-3. **Page reviews** — remaining service pages not yet reviewed: massage, cosmetic, O3, APIT, B12, pelvic floor, dry needling, fertility, womens-health
-4. **Analytics** — wire GA4 + FB Pixel once IDs are provided
-5. **Shopify upgrade** — test full checkout end-to-end on paid plan
-6. **Live chat** — add floating chat widget embed code
+2. **Remaining missing pages** — `/get-pregnant-faster`, `/accessibility-statement` redirect
+3. **Analytics** — wire GA4 + FB Pixel once IDs are provided
+4. **Shopify upgrade** — test full checkout end-to-end on paid plan
+5. **Live chat** — add floating chat widget embed code
 
 ---
 

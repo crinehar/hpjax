@@ -20,6 +20,7 @@ const quickLinks = [
   { label: "Blog", href: "/blog" },
   { label: "Gift Cards", href: "/shop" },
   { label: "Contact", href: "/contact" },
+  { label: "Careers", href: "/health-pointe-jax-careers" },
   { label: "Accessibility", href: "/accessibility" },
 ];
 

@@ -65,6 +65,24 @@ const nextConfig = {
       // Pelvic floor — moved from /pelvic-floor/ to /services/pelvic-floor/
       { source: "/pelvic-floor", destination: "/services/pelvic-floor", permanent: true },
       { source: "/pelvic-floor/", destination: "/services/pelvic-floor/", permanent: true },
+      // Long COVID — moved under /services/
+      { source: "/long-covid-syndrome", destination: "/services/long-covid-syndrome", permanent: true },
+      { source: "/long-covid-syndrome/", destination: "/services/long-covid-syndrome/", permanent: true },
+      // Chronic pain — moved under /services/
+      { source: "/chronic-pain", destination: "/services/chronic-pain", permanent: true },
+      { source: "/chronic-pain/", destination: "/services/chronic-pain/", permanent: true },
+      // Neurological disorders — moved under /services/
+      { source: "/neurological-disorders", destination: "/services/neurological-disorders", permanent: true },
+      { source: "/neurological-disorders/", destination: "/services/neurological-disorders/", permanent: true },
+      // Sports acupuncture — nested under /services/
+      { source: "/sports-acupuncture", destination: "/services/sports-acupuncture", permanent: true },
+      { source: "/sports-acupuncture/", destination: "/services/sports-acupuncture/", permanent: true },
+      // Pediatric acupuncture — nested under /services/
+      { source: "/pediatric-acupuncture", destination: "/services/pediatric-acupuncture", permanent: true },
+      { source: "/pediatric-acupuncture/", destination: "/services/pediatric-acupuncture/", permanent: true },
+      // Quit smoking — nested under /services/
+      { source: "/quit-smoking-program-jacksonville", destination: "/services/quit-smoking-program-jacksonville", permanent: true },
+      { source: "/quit-smoking-program-jacksonville/", destination: "/services/quit-smoking-program-jacksonville/", permanent: true },
       // Blog posts — WP had no /blog/ prefix, new site does
       ...blogRedirects,
     ];

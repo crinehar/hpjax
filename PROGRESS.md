@@ -1,7 +1,7 @@
 # Health Pointe Jacksonville — Rebuild Progress
 
 ## Status: In Progress
-**Last updated:** 2026-06-03 (evening session)
+**Last updated:** 2026-06-04 (full review session)
 **WP Sitemap:** https://hpjax.com/page-sitemap.xml (audited 2026-06-03)
 
 ### Lighthouse Benchmark Scores (2026-05-22 — hpjax.vercel.app)
@@ -31,7 +31,7 @@ These are the baseline scores to maintain before go-live. Do not merge PRs that 
 | `/our-team/dana` | ✅ Complete | Bio, fun facts, no book button |
 | `/testimonials` | ✅ Complete | 129 real WP reviews, category filter + search, Google badge (319), AggregateRating schema |
 | `/contact` | ✅ Complete | LeadConnector iframe (lazy-loaded), hero image, verbatim WP copy, ContactPage + LocalBusiness schema |
-| `/accessibility` | ✅ Scaffolded | WCAG 2.1 AA statement |
+| `/accessibility` | ✅ Complete | WCAG 2.2 AA statement, verbatim WP copy, technical specs list, contact links |
 | `/book` | ✅ Removed | 302 redirect → AcuBliss; all Book Now buttons open new tab directly |
 | `/shop` | ✅ Live | Shopify headless product grid — fetches live gift cards |
 | `/shop/[handle]` | ✅ Live | Product detail — variant selector, qty, buy → new tab checkout |
@@ -42,23 +42,23 @@ These are the baseline scores to maintain before go-live. Do not merge PRs that 
 | `/services/fertility-acupuncture-jacksonville-fl-aborm-certified-dr-julee-miller` | ✅ Complete | Full rebuild — hero, 8 sections, 3 image cards, IVF stats, reviews, fertility quiz CTA, ADA/SEO/AIO audited |
 | `/services/pelvic-floor` | ✅ Complete | Full rebuild (moved from /pelvic-floor/, 301 redirect added) — hero, who should seek, comprehensive care bg image, CTA band, reviews, ADA/SEO/AIO audited |
 | `/services/dry-needling-jacksonville-fl` | ✅ Complete | New page (301 redirect from /dry-needling-jacksonville-fl/) — hero, 8 sections, conditions grid, team bg image, comparison, ADA/SEO/AIO audited |
-| `/services/acupuncture` | ✅ Scaffolded | Full conditions list + what to expect |
-| `/chronic-pain` | ✅ Scaffolded | Full conditions list + what to expect |
-| `/neurological-disorders` | ✅ Scaffolded | Full conditions list + what to expect |
-| `/services/sports-acupuncture` | ✅ Scaffolded | Full conditions list + what to expect |
-| `/services/pediatric-acupuncture` | ✅ Scaffolded | Full conditions list + what to expect |
-| `/services/quit-smoking-program-jacksonville` | ✅ Scaffolded | Full conditions list + what to expect |
-| `/long-covid-syndrome` | ✅ Scaffolded | Full conditions list + what to expect |
+| `/services/acupuncture` | ✅ Complete | Full review — new hero + full-bleed images, full-width intro, WP SEO, ADA/AIO audited |
+| `/services/sports-acupuncture` | ✅ Complete | Full review — new hero, intro text, 3 treatment images, full-bleed cycling image, WP SEO, ADA/AIO audited |
+| `/services/pediatric-acupuncture` | ✅ Complete | Full review — new hero, WP copy, warm-up section with 3 images, shonishin full-bleed, WP SEO, ADA/AIO audited |
+| `/services/quit-smoking-program-jacksonville` | ✅ Complete | Full review — new hero, WP copy throughout, How Does It Work + 3 images, guarantee full-bleed, WP SEO, ADA/AIO audited |
+| `/services/chronic-pain` | ✅ Complete | Moved from /chronic-pain/ (301 redirect) — full review, new images, quiz CTA band, ADA/SEO/AIO audited |
+| `/services/neurological-disorders` | ✅ Complete | Moved from /neurological-disorders/ (301 redirect) — full review, new images, 3-image grid, reclaim health full-bleed, ADA/SEO/AIO audited |
+| `/services/long-covid-syndrome` | ✅ Complete | Full rebuild — hero, intro, symptom groups (3-col), why choose + image grid, research quote full-bleed, FAQ, reclaim health full-bleed, aftercare, reviews, ADA/SEO/AIO audited |
 | `/services/cosmetic-facial-acupuncture` | ✅ Complete | Full rebuild — hero, benefits grid, approach, image band, FAQ, reviews carousel, ADA/SEO/AIO audited |
 | `/services/o3-regenerative-therapy` | ✅ Complete | Full rebuild — hero, accordion, conditions grid, consultation, image grid, FAQ (ol), reviews, ADA/SEO/AIO audited |
 | `/services/acupuncture-point-injection-therapy` | ✅ Complete | Full rebuild — hero, conditions grid, how it works, biopuncture products grid, image band, FAQ, reviews, ADA/SEO/AIO audited |
 | `/services/b12-injections` | ✅ Complete | Full rebuild — hero, intro, benefits grid, fat burning section, ingredients grid, image band, FAQ, aftercare, FDA disclaimer, ADA/SEO/AIO audited |
+| `/services` | ✅ Complete | New page — 4 sections (Women's Health, Acupuncture, Massage, Additional), service cards with ABORM badge, ItemList schema, ADA/SEO/AIO audited |
+| `/health-pointe-jax-careers` | ✅ Complete | New page — mission, 5 core values, 3 job listings, gradient CTA, WP copy verbatim, added to footer quick links |
 | `/get-pregnant-faster` | ❌ Missing | In WP sitemap — confirm if needed (landing page?) |
 | `/pathway-to-pregancy` | ❌ Missing | In WP sitemap — confirm if needed (landing page, note WP typo) |
 | `/pelvic-floor-health-quiz` | ❌ Missing | In WP sitemap — quiz page, needs discussion |
-| `/free-pain-screening-quiz` | ❌ Missing | In WP sitemap — quiz page, needs discussion |
-| `/health-pointe-jax-careers` | ❌ Missing | In WP sitemap — careers page + 3 sub-pages |
-| `/services` | ❌ Missing | In WP sitemap — services index page |
+| `/free-pain-screening-quiz` | ❌ Missing | In WP sitemap — quiz page, needs discussion (linked from /services/chronic-pain/) |
 | `/accessibility-statement` | ⚠️ URL mismatch | WP uses `/accessibility-statement/`, we have `/accessibility/` — needs redirect or rename |
 
 ---
@@ -98,7 +98,7 @@ These are the baseline scores to maintain before go-live. Do not merge PRs that 
 | Canonical URLs | ✅ | Every page |
 | OG metadata | ✅ | Title template, default image, product images on /shop/[handle] |
 | Logo | ✅ | Downloaded to `public/images/logo.png` |
-| Build | ✅ | `npm run build` — 0 errors, 158 routes |
+| Build | ✅ | `npm run build` — 0 errors, 160 routes |
 | Shopify Storefront API | ✅ | Connected — env vars in Vercel (Production + Preview) |
 | Blog 301 redirects | ✅ | All 125 WP posts auto-redirected from `/:slug` → `/blog/:slug` |
 
@@ -115,6 +115,12 @@ These are the baseline scores to maintain before go-live. Do not merge PRs that 
 | `/dana` | `/our-team/dana` | 301 |
 | `/angel` | `/our-team/angel` | 301 |
 | `/book` | AcuBliss booking portal | 302 |
+| `/sports-acupuncture` | `/services/sports-acupuncture` | 301 |
+| `/pediatric-acupuncture` | `/services/pediatric-acupuncture` | 301 |
+| `/quit-smoking-program-jacksonville` | `/services/quit-smoking-program-jacksonville` | 301 |
+| `/chronic-pain` | `/services/chronic-pain` | 301 |
+| `/neurological-disorders` | `/services/neurological-disorders` | 301 |
+| `/long-covid-syndrome` | `/services/long-covid-syndrome` | 301 |
 | `/:blog-slug` (125 posts) | `/blog/:blog-slug` | 301 |
 
 ---
@@ -185,9 +191,9 @@ These are the baseline scores to maintain before go-live. Do not merge PRs that 
 
 ## 🎯 Next Session Priorities
 
-1. **Quiz landing pages** — `/fertility-quiz` and `/pelvic-health-quiz` with Mailchimp drip integration
-2. **Remaining scaffolded service pages** — full rebuilds with WP copy: `/services/acupuncture`, `/services/sports-acupuncture`, `/services/pediatric-acupuncture`, `/services/quit-smoking-program-jacksonville`, `/chronic-pain`, `/neurological-disorders`, `/long-covid-syndrome`
-3. **Missing pages** — `/services` index, `/health-pointe-jax-careers`, `/accessibility-statement` (redirect from `/accessibility/`)
+1. **Quiz landing pages** — `/free-pain-screening-quiz` (linked from chronic pain page), `/pelvic-floor-health-quiz`, `/fertility-quiz` with Mailchimp drip
+2. **Remaining missing pages** — `/get-pregnant-faster`, `/pathway-to-pregnancy`, `/accessibility-statement` redirect
+3. **Page reviews** — remaining service pages not yet reviewed: massage, cosmetic, O3, APIT, B12, pelvic floor, dry needling, fertility, womens-health
 4. **Analytics** — wire GA4 + FB Pixel once IDs are provided
 5. **Shopify upgrade** — test full checkout end-to-end on paid plan
 6. **Live chat** — add floating chat widget embed code

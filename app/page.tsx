@@ -120,7 +120,7 @@ export default function HomePage() {
             </h1>
             <p className="text-base md:text-lg text-gray-200 leading-relaxed mb-8">
               <Link
-                href="/about/"
+                href="/our-team/"
                 className="font-semibold text-white underline underline-offset-2 hover:text-teal transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal rounded-sm"
               >
                 Our Mission
@@ -134,7 +134,7 @@ export default function HomePage() {
                 Book Now
               </Link>
               <Link
-                href="/about/"
+                href="/our-team/"
                 className="inline-flex items-center justify-center gap-2 border-2 border-white text-white hover:bg-white hover:text-ink font-body font-semibold text-base px-8 py-4 rounded-md transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md active:translate-y-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
               >
                 Our Mission
@@ -334,7 +334,7 @@ export default function HomePage() {
             <p className="text-gray-200 text-lg max-w-2xl mx-auto mb-8">
               Let us help you feel your best, naturally. Decrease chronic pain and strengthen your immune system with acupuncture so you get back to enjoying life&apos;s moments.
             </p>
-            <Link href="/about/" className="btn-primary text-base px-8 py-4" aria-label="Learn more about Health Pointe Jacksonville">
+            <Link href="/our-team/" className="btn-primary text-base px-8 py-4" aria-label="Learn more about Health Pointe Jacksonville">
               Learn More
             </Link>
           </ScrollReveal>

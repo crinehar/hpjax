@@ -44,8 +44,8 @@ const serviceTypes = [
   {
     heading: "Women's Health Massage",
     items: [
-      { label: "Fertility Massage", href: "/blog/nurture-your-path-to-parenthood-with-fertility-massage/" },
-      { label: "Pregnancy / prenatal massage", href: "/blog/the-transformative-benefits-of-prenatal-postpartum-massage-your-guide-to-supported-motherhood/" },
+      { label: "Fertility Massage", readMoreHref: "/blog/nurture-your-path-to-parenthood-with-fertility-massage/" },
+      { label: "Pregnancy / prenatal massage", readMoreHref: "/blog/the-transformative-benefits-of-prenatal-postpartum-massage-your-guide-to-supported-motherhood/" },
       { label: "Postpartum massage" },
       { label: "Lower back & hip pain" },
       { label: "Sciatica & nerve discomfort" },
@@ -191,13 +191,17 @@ export default function MassageTherapyPage() {
                     {type.items.map((item) => (
                       <div key={item.label} role="listitem" className="flex items-start gap-3">
                         <span className="mt-1.5 w-2 h-2 flex-shrink-0 rounded-full bg-teal-dark" aria-hidden="true" />
-                        {item.href ? (
-                          <Link href={item.href} className="text-teal-dark text-sm leading-snug underline underline-offset-2 hover:text-teal transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-dark rounded">
-                            {item.label}
-                          </Link>
-                        ) : (
+                        <div>
                           <span className="text-ink-muted text-sm leading-snug">{item.label}</span>
-                        )}
+                          {"readMoreHref" in item && item.readMoreHref && (
+                            <Link
+                              href={item.readMoreHref as string}
+                              className="block mt-1 text-xs font-semibold text-teal-dark hover:text-teal transition-colors underline underline-offset-2 focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-teal-dark rounded"
+                            >
+                              Read More →
+                            </Link>
+                          )}
+                        </div>
                       </div>
                     ))}
                   </div>
@@ -262,8 +266,23 @@ export default function MassageTherapyPage() {
                   Within each of us resides a silent system — the lymphatic system — whose only function is to remove toxic build-up and keep us healthy. Manual Lymphatic Drainage (MLD) is a gentle, scientifically-proven massage technique designed to work specifically with this system, helping it function more efficiently.
                 </p>
                 <p className="text-ink-muted leading-relaxed mb-5">
-                  Unlike deep tissue massage, MLD uses very light pressure with specific rhythmic strokes that stimulate lymph flow, speeding up the removal of toxins, inflammation, and cellular waste. Our certified therapists use the renowned <strong className="text-ink">Vodder technique</strong> — the gold standard in lymphatic drainage therapy.
+                  Unlike deep tissue massage, MLD uses very light pressure with specific rhythmic strokes that stimulate lymph flow, speeding up the removal of toxins, inflammation, and cellular waste. Our certified therapists use the renowned <strong className="text-ink">Vodder technique</strong> — the gold standard in lymphatic drainage therapy. We currently do not offer Brazilian body shaping MLD services.
                 </p>
+
+                <div className="flex flex-col sm:flex-row gap-3 mb-6">
+                  <Link
+                    href="/blog/manual-lymphatic-drainage-whats-it-good-for/"
+                    className="inline-flex items-center justify-center gap-1 border border-teal-dark text-teal-dark text-sm font-semibold px-5 py-2.5 rounded-md hover:bg-teal hover:text-white hover:border-teal transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-dark"
+                  >
+                    Read More: What Is MLD Good For? →
+                  </Link>
+                  <Link
+                    href="/blog/the-power-of-mld-massage-your-path-to-optimal-post-surgical-recovery/"
+                    className="inline-flex items-center justify-center gap-1 border border-teal-dark text-teal-dark text-sm font-semibold px-5 py-2.5 rounded-md hover:bg-teal hover:text-white hover:border-teal transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-dark"
+                  >
+                    Read More: Post-Surgical MLD Recovery →
+                  </Link>
+                </div>
 
                 <a
                   href="https://healthpointejacksonville.acubliss.app/portal/booking/denise-reek/jacksonville/massage-manual-lymphatic-drainage-50-minutes/"

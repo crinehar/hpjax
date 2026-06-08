@@ -36,20 +36,20 @@ const team = [
     slug: "denise",
   },
   {
-    name: "Yaira",
-    credentials: "",
-    title: "LMT, Massage Therapist",
-    bio: "With over 20 years of experience, Yaira blends therapeutic skill with a calming touch, drawing from both clinical and spa settings.",
-    photo: "/images/team/yaira-lmt-massage-therapist-jacksonville-fl.jpg",
-    slug: "yaira",
-  },
-  {
     name: "Damaris",
     credentials: "",
     title: "Office Manager",
     bio: "Meet Damaris, the welcoming face of Health Pointe Jax, whose warmth and professionalism help every patient feel right at home.",
     photo: "/images/team/damaris-office-manager-health-pointe-jacksonville.jpg",
     slug: "damaris",
+  },
+  {
+    name: "Lexi",
+    credentials: "",
+    title: "Front Desk",
+    bio: "Lexi is likely the first voice you hear and the first face you see at HPJ — and honestly, we couldn't think of a better person for that job.",
+    photo: "/images/team/lexi-front-desk-health-pointe-jacksonville.jpg",
+    slug: "lexi",
   },
   {
     name: "Angel",

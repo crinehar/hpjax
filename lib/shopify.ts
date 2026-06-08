@@ -120,24 +120,31 @@ function normalizeProduct(node: RawProduct): GiftCard {
   };
 }
 
+export interface CartLine {
+  variantId: string;
+  quantity: number;
+}
+
 const CREATE_CART_MUTATION = `
-  mutation CartCreate($variantId: ID!, $quantity: Int!) {
-    cartCreate(input: {
-      lines: [{ merchandiseId: $variantId, quantity: $quantity }]
-    }) {
+  mutation CartCreate($lines: [CartLineInput!]!) {
+    cartCreate(input: { lines: $lines }) {
       cart { checkoutUrl }
       userErrors { field message }
     }
   }
 `;
 
-export async function createCartCheckout(variantId: string, quantity = 1): Promise<string> {
+export async function createCartCheckout(lines: CartLine[]): Promise<string> {
   const data = await shopifyFetch<{
     cartCreate: {
       cart: { checkoutUrl: string } | null;
       userErrors: { field: string; message: string }[];
     };
-  }>(CREATE_CART_MUTATION, { variantId, quantity }, 0);
+  }>(
+    CREATE_CART_MUTATION,
+    { lines: lines.map((l) => ({ merchandiseId: l.variantId, quantity: l.quantity })) },
+    0
+  );
 
   if (data.cartCreate.userErrors.length > 0) {
     throw new Error(data.cartCreate.userErrors[0].message);

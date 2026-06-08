@@ -506,8 +506,8 @@ export function staffMemberPageSchema({
 export function teamPageSchema() {
   const staff = [
     { name: "Denise", jobTitle: "Lead Licensed Massage Therapist" },
-    { name: "Yaira", jobTitle: "Licensed Massage Therapist" },
     { name: "Damaris", jobTitle: "Office Manager" },
+    { name: "Lexi", jobTitle: "Front Desk" },
     { name: "Angel", jobTitle: "Patient Care Specialist" },
     { name: "Dana", jobTitle: "Patient Care Specialist" },
   ];

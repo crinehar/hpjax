@@ -194,7 +194,11 @@ export default async function GiftCardDetailPage({ params }: Props) {
                 />
               )}
 
-              <GiftCardBuyButton variants={card.variants} />
+              <GiftCardBuyButton
+                variants={card.variants}
+                productTitle={card.title}
+                imageUrl={card.featuredImage?.url}
+              />
 
               <p className="mt-6 text-sm text-ink-muted">
                 <strong>How it works:</strong> Select an amount, complete checkout, and your

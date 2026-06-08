@@ -135,7 +135,7 @@ export default function Footer() {
             <Link href="/accessibility" className="hover:text-primary transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary rounded-sm">
               Accessibility
             </Link>
-            <Link href="/contact" className="hover:text-primary transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary rounded-sm">
+            <Link href="/privacy-policy" className="hover:text-primary transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary rounded-sm">
               Privacy Policy
             </Link>
           </div>

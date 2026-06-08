@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import { ShoppingBag, Search, User } from "lucide-react";
+import { useCart } from "@/lib/cart-context";
 
 function FacebookIcon({ className }: { className?: string }) {
   return (
@@ -44,6 +47,8 @@ function InstagramIcon({ className }: { className?: string }) {
 }
 
 export default function TopBanner() {
+  const { totalItems, openCart } = useCart();
+
   return (
     <div className="bg-teal-dark text-white text-sm" role="region" aria-label="Site utility bar">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -65,13 +70,22 @@ export default function TopBanner() {
           <div className="flex items-center gap-4">
             {/* Utility icons */}
             <div className="flex items-center gap-3">
-              <Link
-                href="/shop"
-                className="text-white/80 hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white rounded-sm"
-                aria-label="Gift cards"
+              <button
+                type="button"
+                onClick={openCart}
+                aria-label={`Shopping bag${totalItems > 0 ? ` — ${totalItems} item${totalItems !== 1 ? "s" : ""}` : ""}`}
+                className="relative text-white/80 hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white rounded-sm"
               >
-                <ShoppingBag className="w-4 h-4" />
-              </Link>
+                <ShoppingBag className="w-4 h-4" aria-hidden="true" />
+                {totalItems > 0 && (
+                  <span
+                    className="absolute -top-1.5 -right-1.5 w-4 h-4 bg-white text-teal-dark text-[10px] font-bold rounded-full flex items-center justify-center leading-none"
+                    aria-hidden="true"
+                  >
+                    {totalItems > 9 ? "9+" : totalItems}
+                  </span>
+                )}
+              </button>
               <button
                 className="text-white/80 hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white rounded-sm"
                 aria-label="Search"

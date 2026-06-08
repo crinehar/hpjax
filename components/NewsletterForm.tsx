@@ -9,8 +9,7 @@ export default function NewsletterForm() {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setStatus("loading");
-    // TODO: wire up Mailchimp server action using MAILCHIMP_API_KEY,
-    // MAILCHIMP_AUDIENCE_ID, and MAILCHIMP_SERVER_PREFIX env vars
+    // TODO: wire up Constant Contact server action using CONSTANT_CONTACT_API_KEY env var
     await new Promise((r) => setTimeout(r, 800));
     setStatus("success");
   }

@@ -47,9 +47,7 @@ const nextConfig = {
       // Denise — old WP slug
       { source: "/denise-lead-lmt", destination: "/our-team/denise", permanent: true },
       { source: "/denise-lead-lmt/", destination: "/our-team/denise", permanent: true },
-      // Yaira — old WP slug
-      { source: "/yaira-lmt", destination: "/our-team/yaira", permanent: true },
-      { source: "/yaira-lmt/", destination: "/our-team/yaira", permanent: true },
+
       // Damaris — old WP slug
       { source: "/damaris", destination: "/our-team/damaris", permanent: true },
       { source: "/damaris/", destination: "/our-team/damaris", permanent: true },
@@ -83,6 +81,19 @@ const nextConfig = {
       // Quit smoking — nested under /services/
       { source: "/quit-smoking-program-jacksonville", destination: "/services/quit-smoking-program-jacksonville", permanent: true },
       { source: "/quit-smoking-program-jacksonville/", destination: "/services/quit-smoking-program-jacksonville/", permanent: true },
+      // Careers — moved from /health-pointe-jax-careers/ to /careers/
+      { source: "/health-pointe-jax-careers", destination: "/careers", permanent: true },
+      { source: "/health-pointe-jax-careers/", destination: "/careers", permanent: true },
+      { source: "/health-pointe-jax-careers/:path*", destination: "/careers/:path*", permanent: true },
+      // Accessibility statement — WP used /accessibility-statement/, new site uses /accessibility/
+      { source: "/accessibility-statement", destination: "/accessibility", permanent: true },
+      { source: "/accessibility-statement/", destination: "/accessibility", permanent: true },
+      // Holiday gifts page — seasonal, redirect to shop until rebuilt for Christmas
+      { source: "/holiday-wellness-gifts", destination: "/shop", permanent: false },
+      { source: "/holiday-wellness-gifts/", destination: "/shop", permanent: false },
+      // Pathway to pregnancy — fix WP typo ("pregancy") to correct spelling
+      { source: "/pathway-to-pregancy", destination: "/pathway-to-pregnancy", permanent: true },
+      { source: "/pathway-to-pregancy/", destination: "/pathway-to-pregnancy", permanent: true },
       // Blog posts — WP had no /blog/ prefix, new site does
       ...blogRedirects,
     ];

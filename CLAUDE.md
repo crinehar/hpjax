@@ -68,16 +68,15 @@ Top priorities in order: PageSpeed 100s, Native ADA/WCAG 2.2 AA, AIO/LLM readabi
 - robots.txt configured
 
 ## API Stubs (do not call live until keys are provided)
-- WordPress REST API: WORDPRESS_API_URL env var
+- Blog: fully static via `lib/posts-data.ts` — no WordPress API, WordPress deleted at DNS cutover
 - Shopify Storefront API: NEXT_PUBLIC_SHOPIFY_DOMAIN, NEXT_PUBLIC_SHOPIFY_STOREFRONT_TOKEN
 - Resend: RESEND_API_KEY
-- Mailchimp: MAILCHIMP_API_KEY, MAILCHIMP_AUDIENCE_ID, MAILCHIMP_SERVER_PREFIX
+- Constant Contact (newsletter): CONSTANT_CONTACT_API_KEY
 
 ## File Structure
 app/
   layout.tsx         — root layout, metadata defaults, skip link
   page.tsx           — homepage (COMPLETE — verbatim WP copy, pending audit)
-  about/page.tsx
   our-team/page.tsx
   testimonials/page.tsx
   contact/page.tsx

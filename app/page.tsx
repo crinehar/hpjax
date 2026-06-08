@@ -35,10 +35,10 @@ const treatments = [
   },
   {
     label: "Women's Health",
-    desc: "PMS, Amenorrhea, Dysmenorrhea, Menopause Syndrome, Irregular Menstruation, PCOS, Ovarian Cysts, Migraine Headaches, Pelvic Issues, Hot Flashes, Anxiety",
+    desc: "PMS, Amenorrhea, Dysmenorrhea, Menopause Syndrome, Irregular Menstruation, PMOS, Ovarian Cysts, Migraine Headaches, Pelvic Issues, Hot Flashes, Anxiety",
     href: "/womens-health/",
     img: "/images/acupuncture-back-needles-treatment-jacksonville-fl.jpg",
-    alt: "Women's health acupuncture — PCOS, menopause, and hormonal balance at Health Pointe Jacksonville, FL",
+    alt: "Women's health acupuncture — PMOS, menopause, and hormonal balance at Health Pointe Jacksonville, FL",
   },
   {
     label: "Muskuloskeletal",
@@ -190,7 +190,7 @@ export default function HomePage() {
                   Jacksonville&apos;s fertility programs
                 </h2>
                 <p className="text-white leading-relaxed mb-6">
-                  Our programs combine acupuncture and Traditional Chinese medicine along with functional medicine to optimize your fertility journey. We provide natural approaches for endometriosis, &amp; PCOS. Whether you are trying to conceive naturally, or already undergoing ART (Artificial Reproductive Technology) we are here to help!
+                  Our programs combine acupuncture and Traditional Chinese medicine along with functional medicine to optimize your fertility journey. We provide natural approaches for endometriosis, &amp; PMOS. Whether you are trying to conceive naturally, or already undergoing ART (Artificial Reproductive Technology) we are here to help!
                 </p>
                 <a href="https://healthpointejacksonville.acubliss.app/portal/booking/" target="_blank" rel="noopener noreferrer" aria-label="Book Your Appointment (opens in new tab)" className="btn-primary">
                   Book Now

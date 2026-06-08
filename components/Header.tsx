@@ -37,6 +37,7 @@ const otherServicesLinks: NavLink[] = [
 const aboutLinks: NavLink[] = [
   { label: "Meet Our Team", href: "/our-team/", desc: "Board-certified Jacksonville acupuncturists" },
   { label: "Testimonials", href: "/testimonials/", desc: "Patient stories from Jacksonville, FL" },
+  { label: "FAQ", href: "/faq/", desc: "Common questions answered about our clinic and services" },
   { label: "Blog", href: "/blog/", desc: "Wellness articles and health tips from our clinic" },
   { label: "Shop Gift Cards", href: "/shop/", desc: "Give the gift of health — gift cards for any service" },
 ];

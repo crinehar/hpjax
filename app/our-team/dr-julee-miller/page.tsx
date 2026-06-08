@@ -29,7 +29,7 @@ const specializations = [
   "Women's Health & Infertility",
   "Pelvic Floor Dysfunction & Postpartum Care",
   "Hormone Imbalances & Pregnancy Support",
-  "Endometriosis & PCOS",
+  "Endometriosis & PMOS",
   "Chronic Pain & Arthritis",
   "Migraine Headaches & Nerve Pain",
   "Neurological Disorders & Shingles",
@@ -45,7 +45,7 @@ const faqs = [
   },
   {
     q: "What conditions does Dr. Julee Miller treat?",
-    a: "Dr. Miller specializes in Women's Health and Infertility, pelvic floor dysfunction, hormone imbalances, endometriosis, PCOS, postpartum care, chronic pain, arthritis, migraine headaches, nerve pain, neurological disorders, shingles, and autoimmune conditions.",
+    a: "Dr. Miller specializes in Women's Health and Infertility, pelvic floor dysfunction, hormone imbalances, endometriosis, PMOS (Polyendocrine Metabolic Ovarian Syndrome), postpartum care, chronic pain, arthritis, migraine headaches, nerve pain, neurological disorders, shingles, and autoimmune conditions.",
   },
   {
     q: "How many years of experience does Dr. Julee Miller have?",
@@ -248,7 +248,7 @@ export default function DrJuleeMillerPage() {
               By offering patients a truly unique and safe holistic treatment approach, Dr. Miller is able to treat a wide variety of conditions. While her career began treating acute sports injuries, focus eventually shifted to treating chronic pain, failed surgeries, debilitating neuropathies and rheumatoid conditions.
             </p>
             <p>
-              As an Integrative Fertility specialist, Dr. Miller also provides safe, effective care for Women&apos;s Health issues including endometriosis and PCOS. Specializing in reproductive health, she provides a multi-disciplinary approach to treating infertility. She is dedicated to educating and advocating for increased awareness of infertility, miscarriage, and the impact on environmental toxins on health.
+              As an Integrative Fertility specialist, Dr. Miller also provides safe, effective care for Women&apos;s Health issues including endometriosis and PMOS (Polyendocrine Metabolic Ovarian Syndrome). Specializing in reproductive health, she provides a multi-disciplinary approach to treating infertility. She is dedicated to educating and advocating for increased awareness of infertility, miscarriage, and the impact on environmental toxins on health.
             </p>
             <p>
               With the help of her Comprehensive Fertility Program hundreds, if not thousands, of women and couples have become success stories. Helping them achieve their dream of starting a family brings us such joy!

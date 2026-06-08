@@ -17,6 +17,7 @@ const quickLinks = [
   { label: "Our Team", href: "/our-team" },
   { label: "Women's Health", href: "/womens-health" },
   { label: "Testimonials", href: "/testimonials" },
+  { label: "FAQ", href: "/faq" },
   { label: "Blog", href: "/blog" },
   { label: "Gift Cards", href: "/shop" },
   { label: "Contact", href: "/contact" },

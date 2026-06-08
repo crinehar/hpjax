@@ -23,14 +23,14 @@ const womensHealthServices = [
   {
     label: "Women's Health",
     heading: "Hormonal balance. Real support.",
-    body: "From PCOS and endometriosis to menopause and mood regulation, we treat the full spectrum of women's health with acupuncture and integrative care. You deserve more than \"that's just how it is.\"",
+    body: "From PMOS and endometriosis to menopause and mood regulation, we treat the full spectrum of women's health with acupuncture and integrative care. You deserve more than \"that's just how it is.\"",
     href: "/womens-health/",
     badge: null,
   },
   {
     label: "Fertility Programs",
     heading: "Specialized fertility support",
-    body: "Dr. Miller is one of a select group of ABORM-certified fertility acupuncture specialists in Florida. We support natural conception, IVF/IUI cycles, PCOS, unexplained infertility, and pregnancy loss, with a treatment plan built around your specific situation.",
+    body: "Dr. Miller is one of a select group of ABORM-certified fertility acupuncture specialists in Florida. We support natural conception, IVF/IUI cycles, PMOS, unexplained infertility, and pregnancy loss, with a treatment plan built around your specific situation.",
     href: "/services/fertility-acupuncture-jacksonville-fl-aborm-certified-dr-julee-miller/",
     badge: "ABORM Certified",
   },

@@ -247,6 +247,53 @@ export default function MassageTherapyPage() {
         </div>
       </section>
 
+      {/* ── Manual Lymphatic Drainage ───────────────────────────────────────── */}
+      <section aria-labelledby="mld-heading" className="py-20 bg-surface">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+
+            {/* Text */}
+            <div>
+              <ScrollReveal>
+                <h2 id="mld-heading" className="section-heading mb-6">
+                  Manual Lymphatic Drainage (MLD)
+                </h2>
+                <p className="text-ink-muted leading-relaxed mb-5">
+                  Within each of us resides a silent system — the lymphatic system — whose only function is to remove toxic build-up and keep us healthy. Manual Lymphatic Drainage (MLD) is a gentle, scientifically-proven massage technique designed to work specifically with this system, helping it function more efficiently.
+                </p>
+                <p className="text-ink-muted leading-relaxed mb-5">
+                  Unlike deep tissue massage, MLD uses very light pressure with specific rhythmic strokes that stimulate lymph flow, speeding up the removal of toxins, inflammation, and cellular waste. Our certified therapists use the renowned <strong className="text-ink">Vodder technique</strong> — the gold standard in lymphatic drainage therapy.
+                </p>
+
+                <a
+                  href="https://healthpointejacksonville.acubliss.app/portal/booking/denise-reek/jacksonville/massage-manual-lymphatic-drainage-50-minutes/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Book Your MLD Session (opens in new tab)"
+                  className="btn-primary"
+                >
+                  Book Your MLD Session
+                </a>
+              </ScrollReveal>
+            </div>
+
+            {/* Image */}
+            <ScrollReveal delay={0.1}>
+              <figure className="relative overflow-hidden rounded-2xl aspect-square">
+                <Image
+                  src="/images/manual-lymphatic-drainage-massage-jacksonville-fl.webp"
+                  alt="Manual lymphatic drainage massage therapist performing abdominal MLD technique at Health Pointe Jacksonville"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover object-center"
+                />
+              </figure>
+            </ScrollReveal>
+
+          </div>
+        </div>
+      </section>
+
       {/* ── Discover the Healing Power ──────────────────────────────────────── */}
       <section aria-labelledby="healing-heading" className="relative py-24 overflow-hidden">
         <Image

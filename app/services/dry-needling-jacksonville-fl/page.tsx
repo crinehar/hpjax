@@ -88,7 +88,7 @@ const conditions = [
   },
   {
     title: "Fertility Support",
-    body: "While dry needling is not a fertility treatment, it plays a supportive role for women going through IVF, navigating cycle irregularities, or dealing with conditions like PCOS that affect hormonal balance and muscle tension. Reducing pelvic tension, supporting circulation, and calming an overactive nervous system all create a better internal environment for reproductive health. Dr. Julee works alongside your reproductive care team. Treatment is adapted based on where you are in your cycle or protocol.",
+    body: "While dry needling is not a fertility treatment, it plays a supportive role for women going through IVF, navigating cycle irregularities, or dealing with conditions like PMOS that affect hormonal balance and muscle tension. Reducing pelvic tension, supporting circulation, and calming an overactive nervous system all create a better internal environment for reproductive health. Dr. Julee works alongside your reproductive care team. Treatment is adapted based on where you are in your cycle or protocol.",
   },
 ];
 

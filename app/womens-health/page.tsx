@@ -8,13 +8,13 @@ import { servicePageSchema, faqSchema } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "Women's Health Acupuncture in Jacksonville, FL",
   description:
-    "Health Pointe Jacksonville offers holistic women's health acupuncture for PCOS, endometriosis, fertility, menopause, pelvic floor, and hormonal balance. Book today.",
+    "Health Pointe Jacksonville offers holistic women's health acupuncture for PMOS, endometriosis, fertility, menopause, pelvic floor, and hormonal balance. Book today.",
   alternates: { canonical: "https://hpjax.com/womens-health/" },
   openGraph: {
     title:
       "Women's Health Acupuncture in Jacksonville, FL | Health Pointe Jacksonville",
     description:
-      "Health Pointe Jacksonville offers holistic women's health acupuncture for PCOS, endometriosis, fertility, menopause, pelvic floor, and hormonal balance. Book today.",
+      "Health Pointe Jacksonville offers holistic women's health acupuncture for PMOS, endometriosis, fertility, menopause, pelvic floor, and hormonal balance. Book today.",
     images: [
       {
         url: "https://hpjax.com/images/womens-health-fertility-wellness-jacksonville-fl.jpg",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 const schema = servicePageSchema({
   name: "Women's Health Acupuncture",
   description:
-    "Holistic acupuncture and integrative care for women's health conditions including PCOS, endometriosis, fertility support, menopause, pelvic floor dysfunction, and hormonal balance at Health Pointe Jacksonville.",
+    "Holistic acupuncture and integrative care for women's health conditions including PMOS, endometriosis, fertility support, menopause, pelvic floor dysfunction, and hormonal balance at Health Pointe Jacksonville.",
   url: "/womens-health/",
 });
 
@@ -37,7 +37,7 @@ const faqs = [
   {
     question: "What women's health conditions does acupuncture treat in Jacksonville, FL?",
     answer:
-      "At Health Pointe Jacksonville, acupuncture is used to treat a wide range of women's health conditions including PCOS, endometriosis, irregular periods, hormonal acne, hormonal imbalances, anxiety, mood regulation, hormonally-charged headaches, early-onset menopause, menopause, and postmenopause symptoms.",
+      "At Health Pointe Jacksonville, acupuncture is used to treat a wide range of women's health conditions including PMOS, endometriosis, irregular periods, hormonal acne, hormonal imbalances, anxiety, mood regulation, hormonally-charged headaches, early-onset menopause, menopause, and postmenopause symptoms.",
   },
   {
     question: "How does acupuncture help with hormonal imbalances?",
@@ -61,7 +61,7 @@ const faqLd = faqSchema(faqs);
 const fertilityConditions = [
   "Hormonal balancing",
   "Irregular period regulation",
-  "Polycystic Ovarian Syndrome (PCOS)",
+  "Polyendocrine Metabolic Ovarian Syndrome (PMOS)",
   "Endometriosis",
   "Hormonal acne",
 ];
@@ -156,7 +156,7 @@ export default function WomensHealthPage() {
             <p className="text-lg text-ink-muted leading-relaxed mb-4">
               Rooted in thousands of years of holistic medicine, acupuncture supports the body&apos;s
               natural ability to heal and thrive. It&apos;s highly effective for addressing conditions
-              like PCOS, endometriosis, menopause symptoms, hormonal acne, and more, while promoting
+              like PMOS, endometriosis, menopause symptoms, hormonal acne, and more, while promoting
               overall balance and vitality.
             </p>
             <p className="text-lg text-ink-muted leading-relaxed">

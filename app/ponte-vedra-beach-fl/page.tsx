@@ -8,12 +8,12 @@ import { faqSchema, breadcrumbSchema, localBusinessEntity } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "Acupuncture Near Ponte Vedra Beach, FL",
   description:
-    "Health Pointe Jacksonville provides specialized acupuncture care for fertility, women's health, pelvic floor, chronic pain, and wellness for patients near Ponte Vedra Beach, FL.",
-  alternates: { canonical: "https://hpjax.com/acupuncture-ponte-vedra-beach-fl/" },
+    "Tired of having your symptoms dismissed? Health Pointe Jacksonville serves Ponte Vedra Beach patients with personalized acupuncture for fertility, women's health, and chronic pain.",
+  alternates: { canonical: "https://hpjax.com/ponte-vedra-beach-fl/" },
   openGraph: {
     title: "Acupuncture Near Ponte Vedra Beach, FL | Health Pointe Jacksonville",
     description:
-      "Health Pointe Jacksonville provides specialized acupuncture care for fertility, women's health, pelvic floor, chronic pain, and wellness for patients near Ponte Vedra Beach, FL.",
+      "Tired of having your symptoms dismissed? Health Pointe Jacksonville serves Ponte Vedra Beach patients with personalized acupuncture for fertility, women's health, and chronic pain.",
     images: [
       {
         url: "https://hpjax.com/images/health-pointe-jacksonville-acupuncture-clinic.jpg",

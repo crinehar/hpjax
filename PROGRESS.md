@@ -1,7 +1,7 @@
 # Health Pointe Jacksonville — Rebuild Progress
 
 ## Status: In Progress
-**Last updated:** 2026-06-08 (team update: Yaira removed, Lexi added; careers slug moved to /careers/; 3 job sub-pages built)
+**Last updated:** 2026-06-11 (YouTube added to TopBanner social icons; TikTok + YouTube added to Footer social links)
 **WP Sitemap:** https://hpjax.com/page-sitemap.xml (audited 2026-06-03)
 
 ### Lighthouse Benchmark Scores (2026-05-22 — hpjax.vercel.app)
